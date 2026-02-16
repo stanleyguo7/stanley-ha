@@ -324,34 +324,46 @@ views:
     path: overview
     icon: mdi:view-dashboard
     cards:
-      - type: entities
-        title: 楼层导航
-        entities:
-          - type: custom:button-card
-            entity: sensor.floor_b1
+      - type: grid
+        square: false
+        columns: 2
+        cards:
+          - type: entity
+            entity: sensor.time
             name: 地下室 (B1)
+            icon: mdi:basement
             tap_action:
               action: navigate
               navigation_path: /lovelace/floorplan-b1
-            icon: mdi:basement
-          - type: custom:button-card
-            entity: sensor.floor_1f
+          - type: entity
+            entity: sensor.time
             name: 一楼 (1F)
+            icon: mdi:home-floor-1
             tap_action:
               action: navigate
               navigation_path: /lovelace/floorplan-1f
-            icon: mdi:home-floor-1
-          - type: custom:button-card
-            entity: sensor.floor_2f
+          - type: entity
+            entity: sensor.time
             name: 二楼 (2F)
+            icon: mdi:home-floor-2
             tap_action:
               action: navigate
               navigation_path: /lovelace/floorplan-2f
-            icon: mdi:home-floor-2
-          - type: custom:button-card
-            entity: sensor.floor_3f
+          - type: entity
+            entity: sensor.time
             name: 三楼 (3F)
+            icon: mdi:home-floor-3
             tap_action:
               action: navigate
               navigation_path: /lovelace/floorplan-3f
-            icon: mdi:home-floor-3
+      - type: markdown
+        content: |
+          ## 楼层导航
+          
+          点击上方卡片可快速跳转到对应楼层的平面图。
+          
+          ### 楼层说明
+          - **地下室 (B1)**: 机房、健身房、茶室、酒吧、浴室、影音室、洗衣房、储藏间、设备间
+          - **一楼 (1F)**: 玄关、客厅、西厨、中厨、书房、长辈房、车库、卫生间
+          - **二楼 (2F)**: 休闲区、主卧、长子房、次子房、露台
+          - **三楼 (3F)**: 阁楼、卫生间

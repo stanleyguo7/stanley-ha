@@ -1,27 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="400" height="350" xmlns="http://www.w3.org/2000/svg">
+<svg width="400" height="350" viewBox="0 0 400 350" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>
-      .room { fill: #e8f4f8; stroke: #2c3e50; stroke-width: 2; }
-      .room-label { font-family: Arial, sans-serif; font-size: 12px; fill: #2c3e50; font-weight: bold; }
-      .room-id { font-family: Arial, sans-serif; font-size: 10px; fill: #7f8c8d; }
-      .wall { fill: #34495e; stroke: #2c3e50; stroke-width: 3; }
+      .floorplan-bg { fill: #f8f9fa; stroke: none; }
+      .room-area { fill: #e8f4f8; stroke: #2c3e50; stroke-width: 2; fill-opacity: 0.7; }
+      .room-area:hover { fill-opacity: 0.9; stroke-width: 3; }
+      .room-label { font-family: 'Arial', 'Microsoft YaHei', sans-serif; font-size: 14px; fill: #2c3e50; font-weight: bold; text-anchor: middle; }
+      .room-id { font-family: 'Arial', 'Courier New', monospace; font-size: 10px; fill: #7f8c8d; text-anchor: middle; }
+      .title { font-family: 'Arial', 'Microsoft YaHei', sans-serif; font-size: 18px; fill: #2c3e50; font-weight: bold; text-anchor: middle; }
     </style>
   </defs>
   
   <!-- 背景 -->
-  <rect width="400" height="350" fill="#f5f5f5"/>
+  <rect class="floorplan-bg" width="400" height="350"/>
   
-  <!-- 阁楼 (50, 30, 300x200) -->
-  <rect x="50" y="30" width="300" height="200" class="room" fill="#fff2cc"/>
-  <text x="200" y="110" text-anchor="middle" class="room-label">阁楼</text>
-  <text x="200" y="130" text-anchor="middle" class="room-id">f3_attic</text>
+  <!-- 阁楼 (50, 30, 300x200) - f3_attic -->
+  <g id="f3_attic" data-area-id="f3_attic">
+    <rect class="room-area" x="50" y="30" width="300" height="200" fill="#fff2cc"/>
+    <text class="room-label" x="200" y="110">阁楼</text>
+    <text class="room-id" x="200" y="130">f3_attic</text>
+  </g>
   
-  <!-- 卫生间 (50, 240, 80x60) -->
-  <rect x="50" y="240" width="80" height="60" class="room" fill="#dae8fc"/>
-  <text x="90" y="270" text-anchor="middle" class="room-label">卫生间</text>
-  <text x="90" y="285" text-anchor="middle" class="room-id">f3_bathroom</text>
+  <!-- 卫生间 (50, 240, 80x60) - f3_bathroom -->
+  <g id="f3_bathroom" data-area-id="f3_bathroom">
+    <rect class="room-area" x="50" y="240" width="80" height="60" fill="#dae8fc"/>
+    <text class="room-label" x="90" y="270">卫生间</text>
+    <text class="room-id" x="90" y="285">f3_bathroom</text>
+  </g>
   
   <!-- 标题 -->
-  <text x="200" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">三楼 (3F) 平面图</text>
+  <text class="title" x="200" y="340">三楼 (3F) 平面图</text>
 </svg>
