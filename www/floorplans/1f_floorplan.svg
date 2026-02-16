@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="450" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .room { fill: #e8f4f8; stroke: #2c3e50; stroke-width: 2; }
+      .room-label { font-family: Arial, sans-serif; font-size: 12px; fill: #2c3e50; font-weight: bold; }
+      .room-id { font-family: Arial, sans-serif; font-size: 10px; fill: #7f8c8d; }
+      .wall { fill: #34495e; stroke: #2c3e50; stroke-width: 3; }
+    </style>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="450" height="400" fill="#f5f5f5"/>
+  
+  <!-- 玄关 (10, 10, 80x60) -->
+  <rect x="10" y="10" width="80" height="60" class="room" fill="#f5f5f5"/>
+  <text x="50" y="35" text-anchor="middle" class="room-label">玄关</text>
+  <text x="50" y="50" text-anchor="middle" class="room-id">f1_entrance</text>
+  
+  <!-- 客厅 (50, 30, 150x120) -->
+  <rect x="50" y="30" width="150" height="120" class="room" fill="#fff2cc"/>
+  <text x="125" y="70" text-anchor="middle" class="room-label">客厅</text>
+  <text x="125" y="85" text-anchor="middle" class="room-id">f1_living_room</text>
+  
+  <!-- 西厨 (220, 30, 100x80) -->
+  <rect x="220" y="30" width="100" height="80" class="room" fill="#f8cecc"/>
+  <text x="270" y="60" text-anchor="middle" class="room-label">西厨</text>
+  <text x="270" y="75" text-anchor="middle" class="room-id">f1_western_kitchen</text>
+  
+  <!-- 中厨 (330, 30, 100x80) -->
+  <rect x="330" y="30" width="100" height="80" class="room" fill="#f8cecc"/>
+  <text x="380" y="60" text-anchor="middle" class="room-label">中厨</text>
+  <text x="380" y="75" text-anchor="middle" class="room-id">f1_chinese_kitchen</text>
+  
+  <!-- 卫生间 (220, 120, 60x50) -->
+  <rect x="220" y="120" width="60" height="50" class="room" fill="#dae8fc"/>
+  <text x="250" y="145" text-anchor="middle" class="room-label">卫生间</text>
+  <text x="250" y="160" text-anchor="middle" class="room-id">f1_bathroom</text>
+  
+  <!-- 书房 (50, 160, 100x80) -->
+  <rect x="50" y="160" width="100" height="80" class="room" fill="#d5e8d4"/>
+  <text x="100" y="190" text-anchor="middle" class="room-label">书房</text>
+  <text x="100" y="205" text-anchor="middle" class="room-id">f1_study</text>
+  
+  <!-- 长辈房 (160, 160, 120x100) -->
+  <rect x="160" y="160" width="120" height="100" class="room" fill="#e1d5e7"/>
+  <text x="220" y="200" text-anchor="middle" class="room-label">长辈房</text>
+  <text x="220" y="215" text-anchor="middle" class="room-id">f1_senior_bedroom</text>
+  
+  <!-- 车库 (50, 270, 150x100) -->
+  <rect x="50" y="270" width="150" height="100" class="room" fill="#d5e8d4"/>
+  <text x="125" y="315" text-anchor="middle" class="room-label">车库</text>
+  <text x="125" y="330" text-anchor="middle" class="room-id">f1_garage</text>
+  
+  <!-- 标题 -->
+  <text x="225" y="390" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">一楼 (1F) 平面图</text>
+</svg>

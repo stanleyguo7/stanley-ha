@@ -1,0 +1,357 @@
+title: 房屋平面图
+views:
+  - title: 地下室 (B1)
+    path: floorplan-b1
+    icon: mdi:basement
+    cards:
+      - type: custom:floorplan-card
+        image: /local/floorplans/b1_floorplan.svg
+        config:
+          # 机房
+          - type: image
+            entity: binary_sensor.b1_machine_room_motion
+            x: 10
+            y: 10
+            width: 80
+            height: 60
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/b1-machine-room
+            hold_action:
+              action: more-info
+          # 健身房
+          - type: image
+            entity: binary_sensor.b1_gym_motion
+            x: 100
+            y: 10
+            width: 100
+            height: 80
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/b1-gym
+            hold_action:
+              action: more-info
+          # 茶室
+          - type: image
+            entity: binary_sensor.b1_tea_room_motion
+            x: 210
+            y: 10
+            width: 80
+            height: 60
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/b1-tea-room
+            hold_action:
+              action: more-info
+          # 酒吧
+          - type: image
+            entity: binary_sensor.b1_bar_motion
+            x: 10
+            y: 80
+            width: 100
+            height: 80
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/b1-bar
+            hold_action:
+              action: more-info
+          # 浴室
+          - type: image
+            entity: binary_sensor.b1_bathroom_motion
+            x: 120
+            y: 100
+            width: 60
+            height: 50
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/b1-bathroom
+            hold_action:
+              action: more-info
+          # 影音室
+          - type: image
+            entity: binary_sensor.b1_theater_motion
+            x: 210
+            y: 80
+            width: 120
+            height: 100
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/b1-theater
+            hold_action:
+              action: more-info
+          # 洗衣房
+          - type: image
+            entity: binary_sensor.b1_laundry_motion
+            x: 10
+            y: 170
+            width: 80
+            height: 60
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/b1-laundry
+            hold_action:
+              action: more-info
+          # 储藏间
+          - type: image
+            entity: binary_sensor.b1_storage_motion
+            x: 100
+            y: 190
+            width: 80
+            height: 60
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/b1-storage
+            hold_action:
+              action: more-info
+          # 设备间
+          - type: image
+            entity: binary_sensor.b1_equipment_room_motion
+            x: 210
+            y: 190
+            width: 80
+            height: 60
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/b1-equipment-room
+            hold_action:
+              action: more-info
+
+  - title: 一楼 (1F)
+    path: floorplan-1f
+    icon: mdi:home-floor-1
+    cards:
+      - type: custom:floorplan-card
+        image: /local/floorplans/1f_floorplan.svg
+        config:
+          # 客厅
+          - type: image
+            entity: binary_sensor.f1_living_room_motion
+            x: 50
+            y: 30
+            width: 150
+            height: 120
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/f1-living-room
+            hold_action:
+              action: more-info
+          # 西厨
+          - type: image
+            entity: binary_sensor.f1_western_kitchen_motion
+            x: 220
+            y: 30
+            width: 100
+            height: 80
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/f1-western-kitchen
+            hold_action:
+              action: more-info
+          # 中厨
+          - type: image
+            entity: binary_sensor.f1_chinese_kitchen_motion
+            x: 330
+            y: 30
+            width: 100
+            height: 80
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/f1-chinese-kitchen
+            hold_action:
+              action: more-info
+          # 书房
+          - type: image
+            entity: binary_sensor.f1_study_motion
+            x: 50
+            y: 160
+            width: 100
+            height: 80
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/f1-study
+            hold_action:
+              action: more-info
+          # 长辈房
+          - type: image
+            entity: binary_sensor.f1_senior_bedroom_motion
+            x: 160
+            y: 160
+            width: 120
+            height: 100
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/f1-senior-bedroom
+            hold_action:
+              action: more-info
+          # 车库
+          - type: image
+            entity: binary_sensor.f1_garage_motion
+            x: 50
+            y: 270
+            width: 150
+            height: 100
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/f1-garage
+            hold_action:
+              action: more-info
+          # 卫生间
+          - type: image
+            entity: binary_sensor.f1_bathroom_motion
+            x: 220
+            y: 120
+            width: 60
+            height: 50
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/f1-bathroom
+            hold_action:
+              action: more-info
+          # 玄关
+          - type: image
+            entity: binary_sensor.f1_entrance_motion
+            x: 10
+            y: 10
+            width: 80
+            height: 60
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/f1-entrance
+            hold_action:
+              action: more-info
+
+  - title: 二楼 (2F)
+    path: floorplan-2f
+    icon: mdi:home-floor-2
+    cards:
+      - type: custom:floorplan-card
+        image: /local/floorplans/2f_floorplan.svg
+        config:
+          # 休闲区
+          - type: image
+            entity: binary_sensor.f2_common_room_motion
+            x: 50
+            y: 30
+            width: 150
+            height: 100
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/f2-common-room
+            hold_action:
+              action: more-info
+          # 主卧
+          - type: image
+            entity: binary_sensor.f2_master_bedroom_motion
+            x: 220
+            y: 30
+            width: 150
+            height: 120
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/f2-master-bedroom
+            hold_action:
+              action: more-info
+          # 长子房
+          - type: image
+            entity: binary_sensor.f2_eldest_bedroom_motion
+            x: 50
+            y: 140
+            width: 120
+            height: 100
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/f2-eldest-bedroom
+            hold_action:
+              action: more-info
+          # 次子房
+          - type: image
+            entity: binary_sensor.f2_second_bedroom_motion
+            x: 180
+            y: 160
+            width: 120
+            height: 100
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/f2-second-bedroom
+            hold_action:
+              action: more-info
+          # 露台
+          - type: image
+            entity: binary_sensor.f2_balcony_motion
+            x: 310
+            y: 30
+            width: 100
+            height: 80
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/f2-balcony
+            hold_action:
+              action: more-info
+
+  - title: 三楼 (3F)
+    path: floorplan-3f
+    icon: mdi:home-floor-3
+    cards:
+      - type: custom:floorplan-card
+        image: /local/floorplans/3f_floorplan.svg
+        config:
+          # 阁楼
+          - type: image
+            entity: binary_sensor.f3_attic_motion
+            x: 50
+            y: 30
+            width: 300
+            height: 200
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/f3-attic
+            hold_action:
+              action: more-info
+          # 卫生间
+          - type: image
+            entity: binary_sensor.f3_bathroom_motion
+            x: 50
+            y: 240
+            width: 80
+            height: 60
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/f3-bathroom
+            hold_action:
+              action: more-info
+
+  - title: 总览
+    path: overview
+    icon: mdi:view-dashboard
+    cards:
+      - type: entities
+        title: 楼层导航
+        entities:
+          - type: custom:button-card
+            entity: sensor.floor_b1
+            name: 地下室 (B1)
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/floorplan-b1
+            icon: mdi:basement
+          - type: custom:button-card
+            entity: sensor.floor_1f
+            name: 一楼 (1F)
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/floorplan-1f
+            icon: mdi:home-floor-1
+          - type: custom:button-card
+            entity: sensor.floor_2f
+            name: 二楼 (2F)
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/floorplan-2f
+            icon: mdi:home-floor-2
+          - type: custom:button-card
+            entity: sensor.floor_3f
+            name: 三楼 (3F)
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace/floorplan-3f
+            icon: mdi:home-floor-3

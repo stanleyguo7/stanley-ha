@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="350" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .room { fill: #e8f4f8; stroke: #2c3e50; stroke-width: 2; }
+      .room-label { font-family: Arial, sans-serif; font-size: 12px; fill: #2c3e50; font-weight: bold; }
+      .room-id { font-family: Arial, sans-serif; font-size: 10px; fill: #7f8c8d; }
+      .wall { fill: #34495e; stroke: #2c3e50; stroke-width: 3; }
+    </style>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="400" height="350" fill="#f5f5f5"/>
+  
+  <!-- 阁楼 (50, 30, 300x200) -->
+  <rect x="50" y="30" width="300" height="200" class="room" fill="#fff2cc"/>
+  <text x="200" y="110" text-anchor="middle" class="room-label">阁楼</text>
+  <text x="200" y="130" text-anchor="middle" class="room-id">f3_attic</text>
+  
+  <!-- 卫生间 (50, 240, 80x60) -->
+  <rect x="50" y="240" width="80" height="60" class="room" fill="#dae8fc"/>
+  <text x="90" y="270" text-anchor="middle" class="room-label">卫生间</text>
+  <text x="90" y="285" text-anchor="middle" class="room-id">f3_bathroom</text>
+  
+  <!-- 标题 -->
+  <text x="200" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">三楼 (3F) 平面图</text>
+</svg>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .room { fill: #e8f4f8; stroke: #2c3e50; stroke-width: 2; }
+      .room-label { font-family: Arial, sans-serif; font-size: 12px; fill: #2c3e50; font-weight: bold; }
+      .room-id { font-family: Arial, sans-serif; font-size: 10px; fill: #7f8c8d; }
+      .wall { fill: #34495e; stroke: #2c3e50; stroke-width: 3; }
+    </style>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="400" height="300" fill="#f5f5f5"/>
+  
+  <!-- 机房 (10, 10, 80x60) -->
+  <rect x="10" y="10" width="80" height="60" class="room" fill="#d5e8d4"/>
+  <text x="50" y="35" text-anchor="middle" class="room-label">机房</text>
+  <text x="50" y="50" text-anchor="middle" class="room-id">b1_machine_room</text>
+  
+  <!-- 健身房 (100, 10, 100x80) -->
+  <rect x="100" y="10" width="100" height="80" class="room" fill="#fff2cc"/>
+  <text x="150" y="35" text-anchor="middle" class="room-label">健身房</text>
+  <text x="150" y="50" text-anchor="middle" class="room-id">b1_gym</text>
+  
+  <!-- 茶室 (210, 10, 80x60) -->
+  <rect x="210" y="10" width="80" height="60" class="room" fill="#f8cecc"/>
+  <text x="250" y="35" text-anchor="middle" class="room-label">茶室</text>
+  <text x="250" y="50" text-anchor="middle" class="room-id">b1_tea_room</text>
+  
+  <!-- 酒吧 (10, 80, 100x80) -->
+  <rect x="10" y="80" width="100" height="80" class="room" fill="#e1d5e7"/>
+  <text x="60" y="110" text-anchor="middle" class="room-label">酒吧</text>
+  <text x="60" y="125" text-anchor="middle" class="room-id">b1_bar</text>
+  
+  <!-- 浴室 (120, 100, 60x50) -->
+  <rect x="120" y="100" width="60" height="50" class="room" fill="#dae8fc"/>
+  <text x="150" y="125" text-anchor="middle" class="room-label">浴室</text>
+  <text x="150" y="140" text-anchor="middle" class="room-id">b1_bathroom</text>
+  
+  <!-- 影音室 (210, 80, 120x100) -->
+  <rect x="210" y="80" width="120" height="100" class="room" fill="#ffe6cc"/>
+  <text x="270" y="115" text-anchor="middle" class="room-label">影音室</text>
+  <text x="270" y="130" text-anchor="middle" class="room-id">b1_theater</text>
+  
+  <!-- 洗衣房 (10, 170, 80x60) -->
+  <rect x="10" y="170" width="80" height="60" class="room" fill="#d5e8d4"/>
+  <text x="50" y="195" text-anchor="middle" class="room-label">洗衣房</text>
+  <text x="50" y="210" text-anchor="middle" class="room-id">b1_laundry</text>
+  
+  <!-- 储藏间 (100, 190, 80x60) -->
+  <rect x="100" y="190" width="80" height="60" class="room" fill="#f5f5f5"/>
+  <text x="140" y="215" text-anchor="middle" class="room-label">储藏间</text>
+  <text x="140" y="230" text-anchor="middle" class="room-id">b1_storage</text>
+  
+  <!-- 设备间 (210, 190, 80x60) -->
+  <rect x="210" y="190" width="80" height="60" class="room" fill="#fff2cc"/>
+  <text x="250" y="215" text-anchor="middle" class="room-label">设备间</text>
+  <text x="250" y="230" text-anchor="middle" class="room-id">b1_equipment_room</text>
+  
+  <!-- 标题 -->
+  <text x="200" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">地下室 (B1) 平面图</text>
+</svg>
