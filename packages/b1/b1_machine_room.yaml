@@ -1,0 +1,21 @@
+# 机房配置
+# 区域ID: b1_machine_room
+# 区域名称: 机房
+
+# 设备配置
+# 在此添加该区域的设备配置
+# 例如：传感器、开关、灯光等
+
+# 自动化配置
+# 在此添加该区域的自动化规则
+# 例如：
+# automation:
+#   - alias: "机房温度监控"
+#     trigger:
+#       - platform: numeric_state
+#         entity_id: sensor.machine_room_temperature
+#         above: 30
+#     action:
+#       - service: notify.mobile_app
+#         data:
+#           message: "机房温度过高！"

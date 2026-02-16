@@ -6,6 +6,10 @@ default_config:
 frontend:
   themes: !include_dir_merge_named themes
 
+# Load packages (organized by floor and area)
+homeassistant:
+  packages: !include_dir_named packages
+
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
