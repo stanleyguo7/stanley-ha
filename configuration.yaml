@@ -11,13 +11,9 @@ homeassistant:
   packages: !include_dir_named packages
 
 # Lovelace Dashboard configuration
-# Note: Dashboard YAML files should be imported through the UI or stored in .storage/lovelace
-# For YAML mode, you can reference dashboard files here
-lovelace:
-  mode: yaml
-  # Dashboards are typically managed through the UI
-  # To use the floorplan dashboard, import it through:
-  # Configuration > Dashboards > Add Dashboard > Import from YAML
+# Note: Using default storage mode (no need to set mode: yaml)
+# Resources can be added through UI: Configuration > Dashboards > Resources
+# Dashboards can be imported through UI: Configuration > Dashboards > Add Dashboard
 
 automation: !include automations.yaml
 script: !include scripts.yaml
