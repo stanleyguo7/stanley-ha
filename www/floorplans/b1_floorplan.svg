@@ -14,64 +14,64 @@
   <!-- 背景 -->
   <rect class="floorplan-bg" width="400" height="300"/>
   
-  <!-- 机房 (10, 10, 80x60) - b1_machine_room -->
-  <g id="b1_machine_room" data-area-id="b1_machine_room">
+  <!-- 机房 - area.b1_machine_room -->
+  <g id="area.b1_machine_room">
     <rect class="room-area" x="10" y="10" width="80" height="60" fill="#d5e8d4"/>
     <text class="room-label" x="50" y="35">机房</text>
     <text class="room-id" x="50" y="50">b1_machine_room</text>
   </g>
   
-  <!-- 健身房 (100, 10, 100x80) - b1_gym -->
-  <g id="b1_gym" data-area-id="b1_gym">
+  <!-- 健身房 - area.b1_gym -->
+  <g id="area.b1_gym">
     <rect class="room-area" x="100" y="10" width="100" height="80" fill="#fff2cc"/>
     <text class="room-label" x="150" y="40">健身房</text>
     <text class="room-id" x="150" y="55">b1_gym</text>
   </g>
   
-  <!-- 茶室 (210, 10, 80x60) - b1_tea_room -->
-  <g id="b1_tea_room" data-area-id="b1_tea_room">
+  <!-- 茶室 - area.b1_tea_room -->
+  <g id="area.b1_tea_room">
     <rect class="room-area" x="210" y="10" width="80" height="60" fill="#f8cecc"/>
     <text class="room-label" x="250" y="35">茶室</text>
     <text class="room-id" x="250" y="50">b1_tea_room</text>
   </g>
   
-  <!-- 酒吧 (10, 80, 100x80) - b1_bar -->
-  <g id="b1_bar" data-area-id="b1_bar">
+  <!-- 酒吧 - area.b1_bar -->
+  <g id="area.b1_bar">
     <rect class="room-area" x="10" y="80" width="100" height="80" fill="#e1d5e7"/>
     <text class="room-label" x="60" y="110">酒吧</text>
     <text class="room-id" x="60" y="125">b1_bar</text>
   </g>
   
-  <!-- 浴室 (120, 100, 60x50) - b1_bathroom -->
-  <g id="b1_bathroom" data-area-id="b1_bathroom">
+  <!-- 浴室 - area.b1_bathroom -->
+  <g id="area.b1_bathroom">
     <rect class="room-area" x="120" y="100" width="60" height="50" fill="#dae8fc"/>
     <text class="room-label" x="150" y="125">浴室</text>
     <text class="room-id" x="150" y="140">b1_bathroom</text>
   </g>
   
-  <!-- 影音室 (210, 80, 120x100) - b1_theater -->
-  <g id="b1_theater" data-area-id="b1_theater">
+  <!-- 影音室 - area.b1_theater -->
+  <g id="area.b1_theater">
     <rect class="room-area" x="210" y="80" width="120" height="100" fill="#ffe6cc"/>
     <text class="room-label" x="270" y="115">影音室</text>
     <text class="room-id" x="270" y="130">b1_theater</text>
   </g>
   
-  <!-- 洗衣房 (10, 170, 80x60) - b1_laundry -->
-  <g id="b1_laundry" data-area-id="b1_laundry">
+  <!-- 洗衣房 - area.b1_laundry -->
+  <g id="area.b1_laundry">
     <rect class="room-area" x="10" y="170" width="80" height="60" fill="#d5e8d4"/>
     <text class="room-label" x="50" y="195">洗衣房</text>
     <text class="room-id" x="50" y="210">b1_laundry</text>
   </g>
   
-  <!-- 储藏间 (100, 190, 80x60) - b1_storage -->
-  <g id="b1_storage" data-area-id="b1_storage">
+  <!-- 储藏间 - area.b1_storage -->
+  <g id="area.b1_storage">
     <rect class="room-area" x="100" y="190" width="80" height="60" fill="#f5f5f5"/>
     <text class="room-label" x="140" y="215">储藏间</text>
     <text class="room-id" x="140" y="230">b1_storage</text>
   </g>
   
-  <!-- 设备间 (210, 190, 80x60) - b1_equipment_room -->
-  <g id="b1_equipment_room" data-area-id="b1_equipment_room">
+  <!-- 设备间 - area.b1_equipment_room -->
+  <g id="area.b1_equipment_room">
     <rect class="room-area" x="210" y="190" width="80" height="60" fill="#fff2cc"/>
     <text class="room-label" x="250" y="215">设备间</text>
     <text class="room-id" x="250" y="230">b1_equipment_room</text>

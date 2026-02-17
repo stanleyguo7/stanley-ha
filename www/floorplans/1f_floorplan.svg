@@ -14,57 +14,57 @@
   <!-- 背景 -->
   <rect class="floorplan-bg" width="450" height="400"/>
   
-  <!-- 玄关 (10, 10, 80x60) - f1_entrance -->
-  <g id="f1_entrance" data-area-id="f1_entrance">
+  <!-- 玄关 - area.f1_entrance -->
+  <g id="area.f1_entrance">
     <rect class="room-area" x="10" y="10" width="80" height="60" fill="#f5f5f5"/>
     <text class="room-label" x="50" y="35">玄关</text>
     <text class="room-id" x="50" y="50">f1_entrance</text>
   </g>
   
-  <!-- 客厅 (50, 30, 150x120) - f1_living_room -->
-  <g id="f1_living_room" data-area-id="f1_living_room">
+  <!-- 客厅 - area.f1_living_room -->
+  <g id="area.f1_living_room">
     <rect class="room-area" x="50" y="30" width="150" height="120" fill="#fff2cc"/>
     <text class="room-label" x="125" y="70">客厅</text>
     <text class="room-id" x="125" y="85">f1_living_room</text>
   </g>
   
-  <!-- 西厨 (220, 30, 100x80) - f1_western_kitchen -->
-  <g id="f1_western_kitchen" data-area-id="f1_western_kitchen">
+  <!-- 西厨 - area.f1_western_kitchen -->
+  <g id="area.f1_western_kitchen">
     <rect class="room-area" x="220" y="30" width="100" height="80" fill="#f8cecc"/>
     <text class="room-label" x="270" y="60">西厨</text>
     <text class="room-id" x="270" y="75">f1_western_kitchen</text>
   </g>
   
-  <!-- 中厨 (330, 30, 100x80) - f1_chinese_kitchen -->
-  <g id="f1_chinese_kitchen" data-area-id="f1_chinese_kitchen">
+  <!-- 中厨 - area.f1_chinese_kitchen -->
+  <g id="area.f1_chinese_kitchen">
     <rect class="room-area" x="330" y="30" width="100" height="80" fill="#f8cecc"/>
     <text class="room-label" x="380" y="60">中厨</text>
     <text class="room-id" x="380" y="75">f1_chinese_kitchen</text>
   </g>
   
-  <!-- 卫生间 (220, 120, 60x50) - f1_bathroom -->
-  <g id="f1_bathroom" data-area-id="f1_bathroom">
+  <!-- 卫生间 - area.f1_bathroom -->
+  <g id="area.f1_bathroom">
     <rect class="room-area" x="220" y="120" width="60" height="50" fill="#dae8fc"/>
     <text class="room-label" x="250" y="145">卫生间</text>
     <text class="room-id" x="250" y="160">f1_bathroom</text>
   </g>
   
-  <!-- 书房 (50, 160, 100x80) - f1_study -->
-  <g id="f1_study" data-area-id="f1_study">
+  <!-- 书房 - area.f1_study -->
+  <g id="area.f1_study">
     <rect class="room-area" x="50" y="160" width="100" height="80" fill="#d5e8d4"/>
     <text class="room-label" x="100" y="190">书房</text>
     <text class="room-id" x="100" y="205">f1_study</text>
   </g>
   
-  <!-- 长辈房 (160, 160, 120x100) - f1_senior_bedroom -->
-  <g id="f1_senior_bedroom" data-area-id="f1_senior_bedroom">
+  <!-- 长辈房 - area.f1_senior_bedroom -->
+  <g id="area.f1_senior_bedroom">
     <rect class="room-area" x="160" y="160" width="120" height="100" fill="#e1d5e7"/>
     <text class="room-label" x="220" y="200">长辈房</text>
     <text class="room-id" x="220" y="215">f1_senior_bedroom</text>
   </g>
   
-  <!-- 车库 (50, 270, 150x100) - f1_garage -->
-  <g id="f1_garage" data-area-id="f1_garage">
+  <!-- 车库 - area.f1_garage -->
+  <g id="area.f1_garage">
     <rect class="room-area" x="50" y="270" width="150" height="100" fill="#d5e8d4"/>
     <text class="room-label" x="125" y="315">车库</text>
     <text class="room-id" x="125" y="330">f1_garage</text>

@@ -14,15 +14,15 @@
   <!-- 背景 -->
   <rect class="floorplan-bg" width="400" height="350"/>
   
-  <!-- 阁楼 (50, 30, 300x200) - f3_attic -->
-  <g id="f3_attic" data-area-id="f3_attic">
+  <!-- 阁楼 - area.f3_attic -->
+  <g id="area.f3_attic">
     <rect class="room-area" x="50" y="30" width="300" height="200" fill="#fff2cc"/>
     <text class="room-label" x="200" y="110">阁楼</text>
     <text class="room-id" x="200" y="130">f3_attic</text>
   </g>
   
-  <!-- 卫生间 (50, 240, 80x60) - f3_bathroom -->
-  <g id="f3_bathroom" data-area-id="f3_bathroom">
+  <!-- 卫生间 - area.f3_bathroom -->
+  <g id="area.f3_bathroom">
     <rect class="room-area" x="50" y="240" width="80" height="60" fill="#dae8fc"/>
     <text class="room-label" x="90" y="270">卫生间</text>
     <text class="room-id" x="90" y="285">f3_bathroom</text>

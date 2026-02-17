@@ -14,36 +14,36 @@
   <!-- 背景 -->
   <rect class="floorplan-bg" width="450" height="300"/>
   
-  <!-- 休闲区 (50, 30, 150x100) - f2_common_room -->
-  <g id="f2_common_room" data-area-id="f2_common_room">
+  <!-- 休闲区 - area.f2_common_room -->
+  <g id="area.f2_common_room">
     <rect class="room-area" x="50" y="30" width="150" height="100" fill="#fff2cc"/>
     <text class="room-label" x="125" y="70">休闲区</text>
     <text class="room-id" x="125" y="85">f2_common_room</text>
   </g>
   
-  <!-- 主卧 (220, 30, 150x120) - f2_master_bedroom -->
-  <g id="f2_master_bedroom" data-area-id="f2_master_bedroom">
+  <!-- 主卧 - area.f2_master_bedroom -->
+  <g id="area.f2_master_bedroom">
     <rect class="room-area" x="220" y="30" width="150" height="120" fill="#e1d5e7"/>
     <text class="room-label" x="295" y="75">主卧</text>
     <text class="room-id" x="295" y="90">f2_master_bedroom</text>
   </g>
   
-  <!-- 露台 (310, 30, 100x80) - f2_balcony -->
-  <g id="f2_balcony" data-area-id="f2_balcony">
+  <!-- 露台 - area.f2_balcony -->
+  <g id="area.f2_balcony">
     <rect class="room-area" x="310" y="30" width="100" height="80" fill="#d5e8d4"/>
     <text class="room-label" x="360" y="60">露台</text>
     <text class="room-id" x="360" y="75">f2_balcony</text>
   </g>
   
-  <!-- 长子房 (50, 140, 120x100) - f2_eldest_bedroom -->
-  <g id="f2_eldest_bedroom" data-area-id="f2_eldest_bedroom">
+  <!-- 长子房 - area.f2_eldest_bedroom -->
+  <g id="area.f2_eldest_bedroom">
     <rect class="room-area" x="50" y="140" width="120" height="100" fill="#ffe6cc"/>
     <text class="room-label" x="110" y="180">长子房</text>
     <text class="room-id" x="110" y="195">f2_eldest_bedroom</text>
   </g>
   
-  <!-- 次子房 (180, 160, 120x100) - f2_second_bedroom -->
-  <g id="f2_second_bedroom" data-area-id="f2_second_bedroom">
+  <!-- 次子房 - area.f2_second_bedroom -->
+  <g id="area.f2_second_bedroom">
     <rect class="room-area" x="180" y="160" width="120" height="100" fill="#ffe6cc"/>
     <text class="room-label" x="240" y="200">次子房</text>
     <text class="room-id" x="240" y="215">f2_second_bedroom</text>

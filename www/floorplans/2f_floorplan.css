@@ -1,0 +1,41 @@
+/* ha-floorplan CSS for 2F Floor */
+#floorplan {
+  padding: 10px;
+}
+
+svg, svg * {
+  vector-effect: non-scaling-stroke !important;
+  pointer-events: all !important;
+}
+
+/* Hover effect */
+.ha-entity:hover {
+  stroke: #03A9F4 !important;
+  stroke-width: 2px !important;
+  stroke-opacity: 1 !important;
+}
+
+/* Motion sensor states */
+.motion-on {
+  fill: #F9D27C !important;
+  opacity: 0.9 !important;
+}
+
+.motion-off {
+  fill: #7CB1F9 !important;
+  opacity: 0.5 !important;
+  transition: fill 0.5s ease;
+}
+
+/* Area states */
+path[id*="area."].motion-on,
+g[id*="area."].motion-on {
+  opacity: 0.9 !important;
+  stroke-width: 3px !important;
+}
+
+path[id*="area."].motion-off,
+g[id*="area."].motion-off {
+  opacity: 0.5 !important;
+  transition: opacity 0.25s;
+}
