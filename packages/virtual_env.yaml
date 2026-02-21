@@ -1,0 +1,316 @@
+# 虚拟环境数据（用于楼层面板温湿度展示）
+
+input_number:
+  v_f1_living_room_temperature:
+    name: 虚拟-客厅-温度
+    min: 10
+    max: 40
+    step: 0.1
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_f1_living_room_humidity:
+    name: 虚拟-客厅-湿度
+    min: 20
+    max: 90
+    step: 1
+    mode: box
+    unit_of_measurement: "%"
+    initial: 50
+
+  v_f2_common_room_temperature:
+    name: 虚拟-休闲区-温度
+    min: 10
+    max: 40
+    step: 0.1
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_f2_common_room_humidity:
+    name: 虚拟-休闲区-湿度
+    min: 20
+    max: 90
+    step: 1
+    mode: box
+    unit_of_measurement: "%"
+    initial: 50
+
+  v_f2_master_bedroom_temperature:
+    name: 虚拟-主卧-温度
+    min: 10
+    max: 40
+    step: 0.1
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_f2_master_bedroom_humidity:
+    name: 虚拟-主卧-湿度
+    min: 20
+    max: 90
+    step: 1
+    mode: box
+    unit_of_measurement: "%"
+    initial: 50
+
+  v_b1_machine_room_temperature:
+    name: 虚拟-B1机房-温度
+    min: 10
+    max: 40
+    step: 0.1
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_b1_machine_room_humidity:
+    name: 虚拟-B1机房-湿度
+    min: 20
+    max: 90
+    step: 1
+    mode: box
+    unit_of_measurement: "%"
+    initial: 50
+
+  v_b1_gym_temperature:
+    name: 虚拟-B1健身房-温度
+    min: 10
+    max: 40
+    step: 0.1
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_b1_gym_humidity:
+    name: 虚拟-B1健身房-湿度
+    min: 20
+    max: 90
+    step: 1
+    mode: box
+    unit_of_measurement: "%"
+    initial: 50
+
+  v_b1_tea_room_temperature:
+    name: 虚拟-B1茶室-温度
+    min: 10
+    max: 40
+    step: 0.1
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_b1_tea_room_humidity:
+    name: 虚拟-B1茶室-湿度
+    min: 20
+    max: 90
+    step: 1
+    mode: box
+    unit_of_measurement: "%"
+    initial: 50
+
+  v_b1_bar_temperature:
+    name: 虚拟-B1酒吧-温度
+    min: 10
+    max: 40
+    step: 0.1
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_b1_bar_humidity:
+    name: 虚拟-B1酒吧-湿度
+    min: 20
+    max: 90
+    step: 1
+    mode: box
+    unit_of_measurement: "%"
+    initial: 50
+
+  v_b1_bathroom_temperature:
+    name: 虚拟-B1浴室-温度
+    min: 10
+    max: 40
+    step: 0.1
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_b1_bathroom_humidity:
+    name: 虚拟-B1浴室-湿度
+    min: 20
+    max: 90
+    step: 1
+    mode: box
+    unit_of_measurement: "%"
+    initial: 50
+
+  v_b1_theater_temperature:
+    name: 虚拟-B1影音室-温度
+    min: 10
+    max: 40
+    step: 0.1
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_b1_theater_humidity:
+    name: 虚拟-B1影音室-湿度
+    min: 20
+    max: 90
+    step: 1
+    mode: box
+    unit_of_measurement: "%"
+    initial: 50
+
+  v_b1_laundry_temperature:
+    name: 虚拟-B1洗衣房-温度
+    min: 10
+    max: 40
+    step: 0.1
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_b1_laundry_humidity:
+    name: 虚拟-B1洗衣房-湿度
+    min: 20
+    max: 90
+    step: 1
+    mode: box
+    unit_of_measurement: "%"
+    initial: 50
+
+  v_b1_storage_temperature:
+    name: 虚拟-B1储藏间-温度
+    min: 10
+    max: 40
+    step: 0.1
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_b1_storage_humidity:
+    name: 虚拟-B1储藏间-湿度
+    min: 20
+    max: 90
+    step: 1
+    mode: box
+    unit_of_measurement: "%"
+    initial: 50
+
+  v_b1_equipment_room_temperature:
+    name: 虚拟-B1设备间-温度
+    min: 10
+    max: 40
+    step: 0.1
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_b1_equipment_room_humidity:
+    name: 虚拟-B1设备间-湿度
+    min: 20
+    max: 90
+    step: 1
+    mode: box
+    unit_of_measurement: "%"
+    initial: 50
+
+template:
+  - sensor:
+      - name: f1_living_room_temperature
+        unique_id: v_sensor_f1_living_room_temperature
+        unit_of_measurement: "°C"
+        state: "{{ states('input_number.v_f1_living_room_temperature') }}"
+      - name: f1_living_room_humidity
+        unique_id: v_sensor_f1_living_room_humidity
+        unit_of_measurement: "%"
+        state: "{{ states('input_number.v_f1_living_room_humidity') }}"
+
+      - name: f2_common_room_temperature
+        unique_id: v_sensor_f2_common_room_temperature
+        unit_of_measurement: "°C"
+        state: "{{ states('input_number.v_f2_common_room_temperature') }}"
+      - name: f2_common_room_humidity
+        unique_id: v_sensor_f2_common_room_humidity
+        unit_of_measurement: "%"
+        state: "{{ states('input_number.v_f2_common_room_humidity') }}"
+
+      - name: f2_master_bedroom_temperature
+        unique_id: v_sensor_f2_master_bedroom_temperature
+        unit_of_measurement: "°C"
+        state: "{{ states('input_number.v_f2_master_bedroom_temperature') }}"
+      - name: f2_master_bedroom_humidity
+        unique_id: v_sensor_f2_master_bedroom_humidity
+        unit_of_measurement: "%"
+        state: "{{ states('input_number.v_f2_master_bedroom_humidity') }}"
+
+      - name: b1_machine_room_temperature
+        unique_id: v_sensor_b1_machine_room_temperature
+        unit_of_measurement: "°C"
+        state: "{{ states('input_number.v_b1_machine_room_temperature') }}"
+      - name: b1_machine_room_humidity
+        unique_id: v_sensor_b1_machine_room_humidity
+        unit_of_measurement: "%"
+        state: "{{ states('input_number.v_b1_machine_room_humidity') }}"
+
+      - name: b1_gym_temperature
+        unique_id: v_sensor_b1_gym_temperature
+        unit_of_measurement: "°C"
+        state: "{{ states('input_number.v_b1_gym_temperature') }}"
+      - name: b1_gym_humidity
+        unique_id: v_sensor_b1_gym_humidity
+        unit_of_measurement: "%"
+        state: "{{ states('input_number.v_b1_gym_humidity') }}"
+
+      - name: b1_tea_room_temperature
+        unique_id: v_sensor_b1_tea_room_temperature
+        unit_of_measurement: "°C"
+        state: "{{ states('input_number.v_b1_tea_room_temperature') }}"
+      - name: b1_tea_room_humidity
+        unique_id: v_sensor_b1_tea_room_humidity
+        unit_of_measurement: "%"
+        state: "{{ states('input_number.v_b1_tea_room_humidity') }}"
+
+      - name: b1_bar_temperature
+        unique_id: v_sensor_b1_bar_temperature
+        unit_of_measurement: "°C"
+        state: "{{ states('input_number.v_b1_bar_temperature') }}"
+      - name: b1_bar_humidity
+        unique_id: v_sensor_b1_bar_humidity
+        unit_of_measurement: "%"
+        state: "{{ states('input_number.v_b1_bar_humidity') }}"
+
+      - name: b1_bathroom_temperature
+        unique_id: v_sensor_b1_bathroom_temperature
+        unit_of_measurement: "°C"
+        state: "{{ states('input_number.v_b1_bathroom_temperature') }}"
+      - name: b1_bathroom_humidity
+        unique_id: v_sensor_b1_bathroom_humidity
+        unit_of_measurement: "%"
+        state: "{{ states('input_number.v_b1_bathroom_humidity') }}"
+
+      - name: b1_theater_temperature
+        unique_id: v_sensor_b1_theater_temperature
+        unit_of_measurement: "°C"
+        state: "{{ states('input_number.v_b1_theater_temperature') }}"
+      - name: b1_theater_humidity
+        unique_id: v_sensor_b1_theater_humidity
+        unit_of_measurement: "%"
+        state: "{{ states('input_number.v_b1_theater_humidity') }}"
+
+      - name: b1_laundry_temperature
+        unique_id: v_sensor_b1_laundry_temperature
+        unit_of_measurement: "°C"
+        state: "{{ states('input_number.v_b1_laundry_temperature') }}"
+      - name: b1_laundry_humidity
+        unique_id: v_sensor_b1_laundry_humidity
+        unit_of_measurement: "%"
+        state: "{{ states('input_number.v_b1_laundry_humidity') }}"
+
+      - name: b1_storage_temperature
+        unique_id: v_sensor_b1_storage_temperature
+        unit_of_measurement: "°C"
+        state: "{{ states('input_number.v_b1_storage_temperature') }}"
+      - name: b1_storage_humidity
+        unique_id: v_sensor_b1_storage_humidity
+        unit_of_measurement: "%"
+        state: "{{ states('input_number.v_b1_storage_humidity') }}"
+
+      - name: b1_equipment_room_temperature
+        unique_id: v_sensor_b1_equipment_room_temperature
+        unit_of_measurement: "°C"
+        state: "{{ states('input_number.v_b1_equipment_room_temperature') }}"
+      - name: b1_equipment_room_humidity
+        unique_id: v_sensor_b1_equipment_room_humidity
+        unit_of_measurement: "%"
+        state: "{{ states('input_number.v_b1_equipment_room_humidity') }}"

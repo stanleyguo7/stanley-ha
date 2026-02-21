@@ -1,0 +1,839 @@
+# 虚拟空调与窗帘（联调用）
+
+input_boolean:
+  v_f1_bathroom_ac_on:
+    name: 虚拟-卫生间-空调电源
+  v_f1_chinese_kitchen_ac_on:
+    name: 虚拟-中厨-空调电源
+  v_f1_entrance_ac_on:
+    name: 虚拟-玄关-空调电源
+  v_f1_garage_ac_on:
+    name: 虚拟-车库-空调电源
+  v_f1_living_room_ac_on:
+    name: 虚拟-客厅-空调电源
+  v_f1_senior_bedroom_ac_on:
+    name: 虚拟-长辈房-空调电源
+  v_f1_study_ac_on:
+    name: 虚拟-书房-空调电源
+  v_f1_western_kitchen_ac_on:
+    name: 虚拟-西厨-空调电源
+  v_f2_balcony_ac_on:
+    name: 虚拟-露台-空调电源
+  v_f2_common_room_ac_on:
+    name: 虚拟-休闲区-空调电源
+  v_f2_eldest_bedroom_ac_on:
+    name: 虚拟-长子房-空调电源
+  v_f2_master_bedroom_ac_on:
+    name: 虚拟-主卧-空调电源
+  v_f2_second_bedroom_ac_on:
+    name: 虚拟-次子房-空调电源
+  v_f3_attic_ac_on:
+    name: 虚拟-阁楼-空调电源
+  v_f3_bathroom_ac_on:
+    name: 虚拟-卫生间-空调电源
+  v_b1_bar_ac_on:
+    name: 虚拟-酒吧-空调电源
+  v_b1_bathroom_ac_on:
+    name: 虚拟-浴室-空调电源
+  v_b1_equipment_room_ac_on:
+    name: 虚拟-设备间-空调电源
+  v_b1_gym_ac_on:
+    name: 虚拟-健身房-空调电源
+  v_b1_laundry_ac_on:
+    name: 虚拟-洗衣房-空调电源
+  v_b1_machine_room_ac_on:
+    name: 虚拟-机房-空调电源
+  v_b1_storage_ac_on:
+    name: 虚拟-储藏间-空调电源
+  v_b1_tea_room_ac_on:
+    name: 虚拟-茶室-空调电源
+  v_b1_theater_ac_on:
+    name: 虚拟-影音室-空调电源
+
+input_select:
+  v_f1_bathroom_ac_mode:
+    name: 虚拟-卫生间-空调模式
+    options:
+      - 自动
+      - 制冷
+      - 制热
+      - 除湿
+      - 送风
+    initial: 自动
+  v_f1_chinese_kitchen_ac_mode:
+    name: 虚拟-中厨-空调模式
+    options:
+      - 自动
+      - 制冷
+      - 制热
+      - 除湿
+      - 送风
+    initial: 自动
+  v_f1_entrance_ac_mode:
+    name: 虚拟-玄关-空调模式
+    options:
+      - 自动
+      - 制冷
+      - 制热
+      - 除湿
+      - 送风
+    initial: 自动
+  v_f1_garage_ac_mode:
+    name: 虚拟-车库-空调模式
+    options:
+      - 自动
+      - 制冷
+      - 制热
+      - 除湿
+      - 送风
+    initial: 自动
+  v_f1_living_room_ac_mode:
+    name: 虚拟-客厅-空调模式
+    options:
+      - 自动
+      - 制冷
+      - 制热
+      - 除湿
+      - 送风
+    initial: 自动
+  v_f1_senior_bedroom_ac_mode:
+    name: 虚拟-长辈房-空调模式
+    options:
+      - 自动
+      - 制冷
+      - 制热
+      - 除湿
+      - 送风
+    initial: 自动
+  v_f1_study_ac_mode:
+    name: 虚拟-书房-空调模式
+    options:
+      - 自动
+      - 制冷
+      - 制热
+      - 除湿
+      - 送风
+    initial: 自动
+  v_f1_western_kitchen_ac_mode:
+    name: 虚拟-西厨-空调模式
+    options:
+      - 自动
+      - 制冷
+      - 制热
+      - 除湿
+      - 送风
+    initial: 自动
+  v_f2_balcony_ac_mode:
+    name: 虚拟-露台-空调模式
+    options:
+      - 自动
+      - 制冷
+      - 制热
+      - 除湿
+      - 送风
+    initial: 自动
+  v_f2_common_room_ac_mode:
+    name: 虚拟-休闲区-空调模式
+    options:
+      - 自动
+      - 制冷
+      - 制热
+      - 除湿
+      - 送风
+    initial: 自动
+  v_f2_eldest_bedroom_ac_mode:
+    name: 虚拟-长子房-空调模式
+    options:
+      - 自动
+      - 制冷
+      - 制热
+      - 除湿
+      - 送风
+    initial: 自动
+  v_f2_master_bedroom_ac_mode:
+    name: 虚拟-主卧-空调模式
+    options:
+      - 自动
+      - 制冷
+      - 制热
+      - 除湿
+      - 送风
+    initial: 自动
+  v_f2_second_bedroom_ac_mode:
+    name: 虚拟-次子房-空调模式
+    options:
+      - 自动
+      - 制冷
+      - 制热
+      - 除湿
+      - 送风
+    initial: 自动
+  v_f3_attic_ac_mode:
+    name: 虚拟-阁楼-空调模式
+    options:
+      - 自动
+      - 制冷
+      - 制热
+      - 除湿
+      - 送风
+    initial: 自动
+  v_f3_bathroom_ac_mode:
+    name: 虚拟-卫生间-空调模式
+    options:
+      - 自动
+      - 制冷
+      - 制热
+      - 除湿
+      - 送风
+    initial: 自动
+  v_b1_bar_ac_mode:
+    name: 虚拟-酒吧-空调模式
+    options:
+      - 自动
+      - 制冷
+      - 制热
+      - 除湿
+      - 送风
+    initial: 自动
+  v_b1_bathroom_ac_mode:
+    name: 虚拟-浴室-空调模式
+    options:
+      - 自动
+      - 制冷
+      - 制热
+      - 除湿
+      - 送风
+    initial: 自动
+  v_b1_equipment_room_ac_mode:
+    name: 虚拟-设备间-空调模式
+    options:
+      - 自动
+      - 制冷
+      - 制热
+      - 除湿
+      - 送风
+    initial: 自动
+  v_b1_gym_ac_mode:
+    name: 虚拟-健身房-空调模式
+    options:
+      - 自动
+      - 制冷
+      - 制热
+      - 除湿
+      - 送风
+    initial: 自动
+  v_b1_laundry_ac_mode:
+    name: 虚拟-洗衣房-空调模式
+    options:
+      - 自动
+      - 制冷
+      - 制热
+      - 除湿
+      - 送风
+    initial: 自动
+  v_b1_machine_room_ac_mode:
+    name: 虚拟-机房-空调模式
+    options:
+      - 自动
+      - 制冷
+      - 制热
+      - 除湿
+      - 送风
+    initial: 自动
+  v_b1_storage_ac_mode:
+    name: 虚拟-储藏间-空调模式
+    options:
+      - 自动
+      - 制冷
+      - 制热
+      - 除湿
+      - 送风
+    initial: 自动
+  v_b1_tea_room_ac_mode:
+    name: 虚拟-茶室-空调模式
+    options:
+      - 自动
+      - 制冷
+      - 制热
+      - 除湿
+      - 送风
+    initial: 自动
+  v_b1_theater_ac_mode:
+    name: 虚拟-影音室-空调模式
+    options:
+      - 自动
+      - 制冷
+      - 制热
+      - 除湿
+      - 送风
+    initial: 自动
+
+input_number:
+  v_f1_bathroom_ac_target_temp:
+    name: 虚拟-卫生间-空调目标温度
+    min: 16
+    max: 30
+    step: 0.5
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_f1_bathroom_ac_current_temp:
+    name: 虚拟-卫生间-当前温度
+    min: 10
+    max: 40
+    step: 0.1
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_f1_chinese_kitchen_ac_target_temp:
+    name: 虚拟-中厨-空调目标温度
+    min: 16
+    max: 30
+    step: 0.5
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_f1_chinese_kitchen_ac_current_temp:
+    name: 虚拟-中厨-当前温度
+    min: 10
+    max: 40
+    step: 0.1
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_f1_entrance_ac_target_temp:
+    name: 虚拟-玄关-空调目标温度
+    min: 16
+    max: 30
+    step: 0.5
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_f1_entrance_ac_current_temp:
+    name: 虚拟-玄关-当前温度
+    min: 10
+    max: 40
+    step: 0.1
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_f1_garage_ac_target_temp:
+    name: 虚拟-车库-空调目标温度
+    min: 16
+    max: 30
+    step: 0.5
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_f1_garage_ac_current_temp:
+    name: 虚拟-车库-当前温度
+    min: 10
+    max: 40
+    step: 0.1
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_f1_living_room_ac_target_temp:
+    name: 虚拟-客厅-空调目标温度
+    min: 16
+    max: 30
+    step: 0.5
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_f1_living_room_ac_current_temp:
+    name: 虚拟-客厅-当前温度
+    min: 10
+    max: 40
+    step: 0.1
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_f1_senior_bedroom_ac_target_temp:
+    name: 虚拟-长辈房-空调目标温度
+    min: 16
+    max: 30
+    step: 0.5
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_f1_senior_bedroom_ac_current_temp:
+    name: 虚拟-长辈房-当前温度
+    min: 10
+    max: 40
+    step: 0.1
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_f1_study_ac_target_temp:
+    name: 虚拟-书房-空调目标温度
+    min: 16
+    max: 30
+    step: 0.5
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_f1_study_ac_current_temp:
+    name: 虚拟-书房-当前温度
+    min: 10
+    max: 40
+    step: 0.1
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_f1_western_kitchen_ac_target_temp:
+    name: 虚拟-西厨-空调目标温度
+    min: 16
+    max: 30
+    step: 0.5
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_f1_western_kitchen_ac_current_temp:
+    name: 虚拟-西厨-当前温度
+    min: 10
+    max: 40
+    step: 0.1
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_f2_balcony_ac_target_temp:
+    name: 虚拟-露台-空调目标温度
+    min: 16
+    max: 30
+    step: 0.5
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_f2_balcony_ac_current_temp:
+    name: 虚拟-露台-当前温度
+    min: 10
+    max: 40
+    step: 0.1
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_f2_common_room_ac_target_temp:
+    name: 虚拟-休闲区-空调目标温度
+    min: 16
+    max: 30
+    step: 0.5
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_f2_common_room_ac_current_temp:
+    name: 虚拟-休闲区-当前温度
+    min: 10
+    max: 40
+    step: 0.1
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_f2_eldest_bedroom_ac_target_temp:
+    name: 虚拟-长子房-空调目标温度
+    min: 16
+    max: 30
+    step: 0.5
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_f2_eldest_bedroom_ac_current_temp:
+    name: 虚拟-长子房-当前温度
+    min: 10
+    max: 40
+    step: 0.1
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_f2_master_bedroom_ac_target_temp:
+    name: 虚拟-主卧-空调目标温度
+    min: 16
+    max: 30
+    step: 0.5
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_f2_master_bedroom_ac_current_temp:
+    name: 虚拟-主卧-当前温度
+    min: 10
+    max: 40
+    step: 0.1
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_f2_second_bedroom_ac_target_temp:
+    name: 虚拟-次子房-空调目标温度
+    min: 16
+    max: 30
+    step: 0.5
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_f2_second_bedroom_ac_current_temp:
+    name: 虚拟-次子房-当前温度
+    min: 10
+    max: 40
+    step: 0.1
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_f3_attic_ac_target_temp:
+    name: 虚拟-阁楼-空调目标温度
+    min: 16
+    max: 30
+    step: 0.5
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_f3_attic_ac_current_temp:
+    name: 虚拟-阁楼-当前温度
+    min: 10
+    max: 40
+    step: 0.1
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_f3_bathroom_ac_target_temp:
+    name: 虚拟-卫生间-空调目标温度
+    min: 16
+    max: 30
+    step: 0.5
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_f3_bathroom_ac_current_temp:
+    name: 虚拟-卫生间-当前温度
+    min: 10
+    max: 40
+    step: 0.1
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_b1_bar_ac_target_temp:
+    name: 虚拟-酒吧-空调目标温度
+    min: 16
+    max: 30
+    step: 0.5
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_b1_bar_ac_current_temp:
+    name: 虚拟-酒吧-当前温度
+    min: 10
+    max: 40
+    step: 0.1
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_b1_bathroom_ac_target_temp:
+    name: 虚拟-浴室-空调目标温度
+    min: 16
+    max: 30
+    step: 0.5
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_b1_bathroom_ac_current_temp:
+    name: 虚拟-浴室-当前温度
+    min: 10
+    max: 40
+    step: 0.1
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_b1_equipment_room_ac_target_temp:
+    name: 虚拟-设备间-空调目标温度
+    min: 16
+    max: 30
+    step: 0.5
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_b1_equipment_room_ac_current_temp:
+    name: 虚拟-设备间-当前温度
+    min: 10
+    max: 40
+    step: 0.1
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_b1_gym_ac_target_temp:
+    name: 虚拟-健身房-空调目标温度
+    min: 16
+    max: 30
+    step: 0.5
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_b1_gym_ac_current_temp:
+    name: 虚拟-健身房-当前温度
+    min: 10
+    max: 40
+    step: 0.1
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_b1_laundry_ac_target_temp:
+    name: 虚拟-洗衣房-空调目标温度
+    min: 16
+    max: 30
+    step: 0.5
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_b1_laundry_ac_current_temp:
+    name: 虚拟-洗衣房-当前温度
+    min: 10
+    max: 40
+    step: 0.1
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_b1_machine_room_ac_target_temp:
+    name: 虚拟-机房-空调目标温度
+    min: 16
+    max: 30
+    step: 0.5
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_b1_machine_room_ac_current_temp:
+    name: 虚拟-机房-当前温度
+    min: 10
+    max: 40
+    step: 0.1
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_b1_storage_ac_target_temp:
+    name: 虚拟-储藏间-空调目标温度
+    min: 16
+    max: 30
+    step: 0.5
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_b1_storage_ac_current_temp:
+    name: 虚拟-储藏间-当前温度
+    min: 10
+    max: 40
+    step: 0.1
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_b1_tea_room_ac_target_temp:
+    name: 虚拟-茶室-空调目标温度
+    min: 16
+    max: 30
+    step: 0.5
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_b1_tea_room_ac_current_temp:
+    name: 虚拟-茶室-当前温度
+    min: 10
+    max: 40
+    step: 0.1
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_b1_theater_ac_target_temp:
+    name: 虚拟-影音室-空调目标温度
+    min: 16
+    max: 30
+    step: 0.5
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_b1_theater_ac_current_temp:
+    name: 虚拟-影音室-当前温度
+    min: 10
+    max: 40
+    step: 0.1
+    mode: box
+    unit_of_measurement: "°C"
+    initial: 24
+  v_f1_living_room_curtain_position:
+    name: 虚拟-客厅-窗帘开合
+    min: 0
+    max: 100
+    step: 1
+    mode: slider
+    unit_of_measurement: "%"
+    initial: 0
+  v_f1_senior_bedroom_curtain_position:
+    name: 虚拟-长辈房-窗帘开合
+    min: 0
+    max: 100
+    step: 1
+    mode: slider
+    unit_of_measurement: "%"
+    initial: 0
+  v_f2_master_bedroom_curtain_position:
+    name: 虚拟-主卧-窗帘开合
+    min: 0
+    max: 100
+    step: 1
+    mode: slider
+    unit_of_measurement: "%"
+    initial: 0
+  v_f2_eldest_bedroom_curtain_position:
+    name: 虚拟-长子房-窗帘开合
+    min: 0
+    max: 100
+    step: 1
+    mode: slider
+    unit_of_measurement: "%"
+    initial: 0
+  v_f2_second_bedroom_curtain_position:
+    name: 虚拟-次子房-窗帘开合
+    min: 0
+    max: 100
+    step: 1
+    mode: slider
+    unit_of_measurement: "%"
+    initial: 0
+
+cover:
+  - platform: template
+    covers:
+      v_f1_living_room_curtain:
+        friendly_name: "虚拟-客厅-窗帘"
+        device_class: curtain
+        position_template: "{{ states('input_number.v_f1_living_room_curtain_position') | int(0) }}"
+        open_cover:
+          service: input_number.set_value
+          target:
+            entity_id: input_number.v_f1_living_room_curtain_position
+          data:
+            value: 100
+        close_cover:
+          service: input_number.set_value
+          target:
+            entity_id: input_number.v_f1_living_room_curtain_position
+          data:
+            value: 0
+        stop_cover:
+          service: input_number.set_value
+          target:
+            entity_id: input_number.v_f1_living_room_curtain_position
+          data:
+            value: "{{ states('input_number.v_f1_living_room_curtain_position') | int(0) }}"
+        set_cover_position:
+          service: input_number.set_value
+          target:
+            entity_id: input_number.v_f1_living_room_curtain_position
+          data:
+            value: "{{ position }}"
+      v_f1_senior_bedroom_curtain:
+        friendly_name: "虚拟-长辈房-窗帘"
+        device_class: curtain
+        position_template: "{{ states('input_number.v_f1_senior_bedroom_curtain_position') | int(0) }}"
+        open_cover:
+          service: input_number.set_value
+          target:
+            entity_id: input_number.v_f1_senior_bedroom_curtain_position
+          data:
+            value: 100
+        close_cover:
+          service: input_number.set_value
+          target:
+            entity_id: input_number.v_f1_senior_bedroom_curtain_position
+          data:
+            value: 0
+        stop_cover:
+          service: input_number.set_value
+          target:
+            entity_id: input_number.v_f1_senior_bedroom_curtain_position
+          data:
+            value: "{{ states('input_number.v_f1_senior_bedroom_curtain_position') | int(0) }}"
+        set_cover_position:
+          service: input_number.set_value
+          target:
+            entity_id: input_number.v_f1_senior_bedroom_curtain_position
+          data:
+            value: "{{ position }}"
+      v_f2_master_bedroom_curtain:
+        friendly_name: "虚拟-主卧-窗帘"
+        device_class: curtain
+        position_template: "{{ states('input_number.v_f2_master_bedroom_curtain_position') | int(0) }}"
+        open_cover:
+          service: input_number.set_value
+          target:
+            entity_id: input_number.v_f2_master_bedroom_curtain_position
+          data:
+            value: 100
+        close_cover:
+          service: input_number.set_value
+          target:
+            entity_id: input_number.v_f2_master_bedroom_curtain_position
+          data:
+            value: 0
+        stop_cover:
+          service: input_number.set_value
+          target:
+            entity_id: input_number.v_f2_master_bedroom_curtain_position
+          data:
+            value: "{{ states('input_number.v_f2_master_bedroom_curtain_position') | int(0) }}"
+        set_cover_position:
+          service: input_number.set_value
+          target:
+            entity_id: input_number.v_f2_master_bedroom_curtain_position
+          data:
+            value: "{{ position }}"
+      v_f2_eldest_bedroom_curtain:
+        friendly_name: "虚拟-长子房-窗帘"
+        device_class: curtain
+        position_template: "{{ states('input_number.v_f2_eldest_bedroom_curtain_position') | int(0) }}"
+        open_cover:
+          service: input_number.set_value
+          target:
+            entity_id: input_number.v_f2_eldest_bedroom_curtain_position
+          data:
+            value: 100
+        close_cover:
+          service: input_number.set_value
+          target:
+            entity_id: input_number.v_f2_eldest_bedroom_curtain_position
+          data:
+            value: 0
+        stop_cover:
+          service: input_number.set_value
+          target:
+            entity_id: input_number.v_f2_eldest_bedroom_curtain_position
+          data:
+            value: "{{ states('input_number.v_f2_eldest_bedroom_curtain_position') | int(0) }}"
+        set_cover_position:
+          service: input_number.set_value
+          target:
+            entity_id: input_number.v_f2_eldest_bedroom_curtain_position
+          data:
+            value: "{{ position }}"
+      v_f2_second_bedroom_curtain:
+        friendly_name: "虚拟-次子房-窗帘"
+        device_class: curtain
+        position_template: "{{ states('input_number.v_f2_second_bedroom_curtain_position') | int(0) }}"
+        open_cover:
+          service: input_number.set_value
+          target:
+            entity_id: input_number.v_f2_second_bedroom_curtain_position
+          data:
+            value: 100
+        close_cover:
+          service: input_number.set_value
+          target:
+            entity_id: input_number.v_f2_second_bedroom_curtain_position
+          data:
+            value: 0
+        stop_cover:
+          service: input_number.set_value
+          target:
+            entity_id: input_number.v_f2_second_bedroom_curtain_position
+          data:
+            value: "{{ states('input_number.v_f2_second_bedroom_curtain_position') | int(0) }}"
+        set_cover_position:
+          service: input_number.set_value
+          target:
+            entity_id: input_number.v_f2_second_bedroom_curtain_position
+          data:
+            value: "{{ position }}"

@@ -1,177 +1,317 @@
-title: 房屋平面图
+title: FloorPlan
 views:
-  - title: 地下室 (B1)
-    path: floorplan-b1
+  - title: 一楼面板
+    path: panel-1f
+    icon: mdi:home-floor-1
+    type: masonry
+    cards:
+      - type: custom:mushroom-title-card
+        card_mod:
+          style: |
+            mushroom-title-card$: |
+              .title {
+                font-size: 14px !important;
+                font-weight: 600 !important;
+              }
+        title: 一楼
+
+      - type: custom:mushroom-chips-card
+        chips:
+          - type: entity
+            entity: sensor.f1_living_room_temperature
+            content_info: state
+            icon: mdi:thermometer
+          - type: entity
+            entity: sensor.f1_living_room_humidity
+            content_info: state
+            icon: mdi:water-percent
+          - type: action
+            icon: mdi:floor-plan
+            tap_action:
+              action: navigate
+              navigation_path: /dashboard-floorplan/floorplan-1f
+          - type: action
+            icon: mdi:cog
+            tap_action:
+              action: navigate
+              navigation_path: /dashboard-floorplan/areas-1f
+
+      - type: grid
+        columns: 2
+        square: false
+        cards:
+          - type: custom:mushroom-light-card
+            entity: light.v_f1_living_room_downlights
+            name: 客厅筒灯
+            fill_container: true
+          - type: custom:mushroom-light-card
+            entity: light.v_f1_living_room_strip
+            name: 客厅灯带
+            fill_container: true
+          - type: custom:mushroom-entity-card
+            entity: input_boolean.v_f1_living_room_ac_on
+            name: 客厅空调电源
+            icon: mdi:air-conditioner
+            tap_action: { action: toggle }
+          - type: custom:mushroom-cover-card
+            entity: cover.v_f1_living_room_curtain
+            name: 客厅窗帘
+            show_position_control: true
+
+  - title: 二楼面板
+    path: panel-2f
+    icon: mdi:home-floor-2
+    type: masonry
+    cards:
+      - type: custom:mushroom-title-card
+        card_mod:
+          style: |
+            mushroom-title-card$: |
+              .title {
+                font-size: 14px !important;
+                font-weight: 600 !important;
+              }
+        title: 二楼
+
+      - type: custom:mushroom-chips-card
+        chips:
+          - type: entity
+            entity: sensor.f2_common_room_temperature
+            content_info: state
+            icon: mdi:thermometer
+          - type: entity
+            entity: sensor.f2_common_room_humidity
+            content_info: state
+            icon: mdi:water-percent
+
+      - type: grid
+        columns: 2
+        square: false
+        cards:
+          - type: custom:mushroom-light-card
+            entity: light.v_f2_common_room_downlights
+            name: 休闲区筒灯
+          - type: custom:mushroom-light-card
+            entity: light.v_f2_common_room_strip
+            name: 休闲区灯带
+
+      - type: custom:mushroom-title-card
+        card_mod:
+          style: |
+            mushroom-title-card$: |
+              .title {
+                font-size: 14px !important;
+                font-weight: 600 !important;
+              }
+        title: 主卧
+      - type: custom:mushroom-chips-card
+        chips:
+          - type: entity
+            entity: sensor.f2_master_bedroom_temperature
+            content_info: state
+            icon: mdi:thermometer
+          - type: entity
+            entity: sensor.f2_master_bedroom_humidity
+            content_info: state
+            icon: mdi:water-percent
+      - type: grid
+        columns: 2
+        square: false
+        cards:
+          - type: custom:mushroom-light-card
+            entity: light.v_f2_master_bedroom_downlights
+            name: 主卧筒灯
+          - type: custom:mushroom-light-card
+            entity: light.v_f2_master_bedroom_strip
+            name: 主卧灯带
+          - type: custom:mushroom-entity-card
+            entity: input_boolean.v_f2_master_bedroom_ac_on
+            name: 主卧空调电源
+            icon: mdi:air-conditioner
+            tap_action: { action: toggle }
+          - type: custom:mushroom-cover-card
+            entity: cover.v_f2_master_bedroom_curtain
+            name: 主卧窗帘
+            show_position_control: true
+
+      - type: custom:mushroom-chips-card
+        chips:
+          - type: action
+            icon: mdi:floor-plan
+            tap_action:
+              action: navigate
+              navigation_path: /dashboard-floorplan/floorplan-2f
+          - type: action
+            icon: mdi:cog
+            tap_action:
+              action: navigate
+              navigation_path: /dashboard-floorplan/areas-2f
+
+  - title: 地下室面板
+    path: panel-b1
     icon: mdi:basement
+    type: masonry
+    cards:
+      - type: custom:mushroom-title-card
+        card_mod:
+          style: |
+            mushroom-title-card$: |
+              .title {
+                font-size: 14px !important;
+                font-weight: 600 !important;
+              }
+        title: 地下室
+
+      - type: custom:mushroom-chips-card
+        chips:
+          - type: entity
+            entity: sensor.b1_machine_room_temperature
+            content_info: state
+            icon: mdi:thermometer
+          - type: entity
+            entity: sensor.b1_gym_humidity
+            content_info: state
+            icon: mdi:water-percent
+          - type: entity
+            entity: sensor.b1_tea_room_temperature
+            content_info: state
+            icon: mdi:thermometer
+          - type: entity
+            entity: sensor.b1_bar_humidity
+            content_info: state
+            icon: mdi:water-percent
+          - type: entity
+            entity: sensor.b1_theater_temperature
+            content_info: state
+            icon: mdi:thermometer
+          - type: action
+            icon: mdi:floor-plan
+            tap_action:
+              action: navigate
+              navigation_path: /dashboard-floorplan/floorplan-b1
+          - type: action
+            icon: mdi:cog
+            tap_action:
+              action: navigate
+              navigation_path: /dashboard-floorplan/areas-b1
+
+      - type: grid
+        columns: 2
+        square: false
+        cards:
+          - type: custom:mushroom-light-card
+            entity: light.v_b1_machine_room_downlights
+            name: 机房筒灯
+          - type: custom:mushroom-light-card
+            entity: light.v_b1_gym_downlights
+            name: 健身房筒灯
+          - type: custom:mushroom-light-card
+            entity: light.v_b1_tea_room_downlights
+            name: 茶室筒灯
+          - type: custom:mushroom-light-card
+            entity: light.v_b1_bar_downlights
+            name: 酒吧筒灯
+          - type: custom:mushroom-light-card
+            entity: light.v_b1_theater_downlights
+            name: 影音室筒灯
+
+  - title: 1F 区域
+    path: areas-1f
+    icon: mdi:apps
+    type: masonry
+    cards:
+      - type: custom:mushroom-title-card
+        card_mod:
+          style: |
+            mushroom-title-card$: |
+              .title {
+                font-size: 14px !important;
+                font-weight: 600 !important;
+              }
+        title: 一楼区域
+      - type: grid
+        columns: 2
+        square: false
+        cards:
+
+  - title: 2F 区域
+    path: areas-2f
+    icon: mdi:apps
+    type: masonry
+    cards:
+      - type: custom:mushroom-title-card
+        card_mod:
+          style: |
+            mushroom-title-card$: |
+              .title {
+                font-size: 14px !important;
+                font-weight: 600 !important;
+              }
+        title: 二楼区域
+      - type: grid
+        columns: 2
+        square: false
+        cards:
+
+  - title: B1 区域
+    path: areas-b1
+    icon: mdi:apps
+    type: masonry
+    cards:
+      - type: custom:mushroom-title-card
+        card_mod:
+          style: |
+            mushroom-title-card$: |
+              .title {
+                font-size: 14px !important;
+                font-weight: 600 !important;
+              }
+        title: 地下室区域
+      - type: grid
+        columns: 2
+        square: false
+        cards:
+
+  - title: B1 平面图
+    path: floorplan-b1
+    icon: mdi:floor-plan
     cards:
       - type: custom:floorplan-card
         config:
           image: /local/floorplans/b1_floorplan.svg
           stylesheet: /local/floorplans/b1_floorplan.css
           style: |
-            ha-card {
-              height: calc(100vh - 140px);
-              width: 100%;
-              min-height: 600px;
-            }
-          
-          defaults:
-            hover_action: hover-info
-            tap_action: more-info
-          
-          # 规则配置
-          # 当实体配置完成后，可以在此添加 rules 配置
-          # 示例：
-          # rules:
-          #   - name: 区域控制
-          #     entities:
-          #       - entity: binary_sensor.b1_machine_room_motion
-          #         element: area.b1_machine_room
-          #     tap_action: more-info
-          #     state_action:
-          #       service: floorplan.class_set
-          #       service_data: '${(entity.state === "on") ? "motion-on" : "motion-off"}'
+            ha-card { height: calc(100vh - 140px); width: 100%; min-height: 600px; }
 
-  - title: 一楼 (1F)
+  - title: 1F 平面图
     path: floorplan-1f
-    icon: mdi:home-floor-1
+    icon: mdi:floor-plan
     cards:
       - type: custom:floorplan-card
         config:
           image: /local/floorplans/1f_floorplan.svg
           stylesheet: /local/floorplans/1f_floorplan.css
           style: |
-            ha-card {
-              height: calc(100vh - 140px);
-              width: 100%;
-              min-height: 600px;
-            }
-          
-          defaults:
-            hover_action: hover-info
-            tap_action: more-info
-          
-          # 规则配置
-          # 当实体配置完成后，可以在此添加 rules 配置
-          # 示例：
-          # rules:
-          #   - name: 区域控制
-          #     entities:
-          #       - entity: binary_sensor.f1_living_room_motion
-          #         element: area.f1_living_room
-          #     tap_action: more-info
-          #     state_action:
-          #       service: floorplan.class_set
-          #       service_data: '${(entity.state === "on") ? "motion-on" : "motion-off"}'
+            ha-card { height: calc(100vh - 140px); width: 100%; min-height: 600px; }
 
-  - title: 二楼 (2F)
+  - title: 2F 平面图
     path: floorplan-2f
-    icon: mdi:home-floor-2
+    icon: mdi:floor-plan
     cards:
       - type: custom:floorplan-card
         config:
           image: /local/floorplans/2f_floorplan.svg
           stylesheet: /local/floorplans/2f_floorplan.css
           style: |
-            ha-card {
-              height: calc(100vh - 140px);
-              width: 100%;
-              min-height: 600px;
-            }
-          
-          defaults:
-            hover_action: hover-info
-            tap_action: more-info
-          
-          # 规则配置
-          # 当实体配置完成后，可以在此添加 rules 配置
-          # 示例：
-          # rules:
-          #   - name: 区域控制
-          #     entities:
-          #       - entity: binary_sensor.f2_master_bedroom_motion
-          #         element: area.f2_master_bedroom
-          #     tap_action: more-info
-          #     state_action:
-          #       service: floorplan.class_set
-          #       service_data: '${(entity.state === "on") ? "motion-on" : "motion-off"}'
+            ha-card { height: calc(100vh - 140px); width: 100%; min-height: 600px; }
 
-  - title: 三楼 (3F)
+  - title: 3F 平面图
     path: floorplan-3f
-    icon: mdi:home-floor-3
+    icon: mdi:floor-plan
     cards:
       - type: custom:floorplan-card
         config:
           image: /local/floorplans/3f_floorplan.svg
           stylesheet: /local/floorplans/3f_floorplan.css
           style: |
-            ha-card {
-              height: calc(100vh - 140px);
-              width: 100%;
-              min-height: 600px;
-            }
-          
-          defaults:
-            hover_action: hover-info
-            tap_action: more-info
-          
-          # 规则配置
-          # 当实体配置完成后，可以在此添加 rules 配置
-          # 示例：
-          # rules:
-          #   - name: 区域控制
-          #     entities:
-          #       - entity: binary_sensor.f3_attic_motion
-          #         element: area.f3_attic
-          #     tap_action: more-info
-          #     state_action:
-          #       service: floorplan.class_set
-          #       service_data: '${(entity.state === "on") ? "motion-on" : "motion-off"}'
-
-  - title: 总览
-    path: overview
-    icon: mdi:view-dashboard
-    cards:
-      - type: grid
-        square: false
-        columns: 2
-        cards:
-          - type: entity
-            entity: sensor.time
-            name: 地下室 (B1)
-            icon: mdi:basement
-            tap_action:
-              action: navigate
-              navigation_path: /lovelace/floorplan-b1
-          - type: entity
-            entity: sensor.time
-            name: 一楼 (1F)
-            icon: mdi:home-floor-1
-            tap_action:
-              action: navigate
-              navigation_path: /lovelace/floorplan-1f
-          - type: entity
-            entity: sensor.time
-            name: 二楼 (2F)
-            icon: mdi:home-floor-2
-            tap_action:
-              action: navigate
-              navigation_path: /lovelace/floorplan-2f
-          - type: entity
-            entity: sensor.time
-            name: 三楼 (3F)
-            icon: mdi:home-floor-3
-            tap_action:
-              action: navigate
-              navigation_path: /lovelace/floorplan-3f
-      - type: markdown
-        content: |
-          ## 楼层导航
-          
-          点击上方卡片可快速跳转到对应楼层的平面图。
-          
-          ### 楼层说明
-          - **地下室 (B1)**: 机房、健身房、茶室、酒吧、浴室、影音室、洗衣房、储藏间、设备间
-          - **一楼 (1F)**: 玄关、客厅、西厨、中厨、书房、长辈房、车库、卫生间
-          - **二楼 (2F)**: 休闲区、主卧、长子房、次子房、露台
-          - **三楼 (3F)**: 阁楼、卫生间
+            ha-card { height: calc(100vh - 140px); width: 100%; min-height: 600px; }

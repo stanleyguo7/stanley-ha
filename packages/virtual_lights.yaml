@@ -1,0 +1,2745 @@
+# 虚拟灯光设备（用于Dashboard与自动化联调，不依赖真实硬件）
+# 每个功能房间：一组筒灯（可调亮度）+ 一组RGB灯带（可调色）
+
+input_boolean:
+  v_f1_bathroom_downlights_on:
+    name: 虚拟-卫生间-筒灯开关
+  v_f1_bathroom_strip_on:
+    name: 虚拟-卫生间-灯带开关
+  v_f1_chinese_kitchen_downlights_on:
+    name: 虚拟-中厨-筒灯开关
+  v_f1_chinese_kitchen_strip_on:
+    name: 虚拟-中厨-灯带开关
+  v_f1_entrance_downlights_on:
+    name: 虚拟-玄关-筒灯开关
+  v_f1_entrance_strip_on:
+    name: 虚拟-玄关-灯带开关
+  v_f1_garage_downlights_on:
+    name: 虚拟-车库-筒灯开关
+  v_f1_garage_strip_on:
+    name: 虚拟-车库-灯带开关
+  v_f1_living_room_downlights_on:
+    name: 虚拟-客厅-筒灯开关
+  v_f1_living_room_strip_on:
+    name: 虚拟-客厅-灯带开关
+  v_f1_senior_bedroom_downlights_on:
+    name: 虚拟-长辈房-筒灯开关
+  v_f1_senior_bedroom_strip_on:
+    name: 虚拟-长辈房-灯带开关
+  v_f1_study_downlights_on:
+    name: 虚拟-书房-筒灯开关
+  v_f1_study_strip_on:
+    name: 虚拟-书房-灯带开关
+  v_f1_western_kitchen_downlights_on:
+    name: 虚拟-西厨-筒灯开关
+  v_f1_western_kitchen_strip_on:
+    name: 虚拟-西厨-灯带开关
+  v_f2_balcony_downlights_on:
+    name: 虚拟-露台-筒灯开关
+  v_f2_balcony_strip_on:
+    name: 虚拟-露台-灯带开关
+  v_f2_common_room_downlights_on:
+    name: 虚拟-休闲区-筒灯开关
+  v_f2_common_room_strip_on:
+    name: 虚拟-休闲区-灯带开关
+  v_f2_eldest_bedroom_downlights_on:
+    name: 虚拟-长子房-筒灯开关
+  v_f2_eldest_bedroom_strip_on:
+    name: 虚拟-长子房-灯带开关
+  v_f2_master_bedroom_downlights_on:
+    name: 虚拟-主卧-筒灯开关
+  v_f2_master_bedroom_strip_on:
+    name: 虚拟-主卧-灯带开关
+  v_f2_second_bedroom_downlights_on:
+    name: 虚拟-次子房-筒灯开关
+  v_f2_second_bedroom_strip_on:
+    name: 虚拟-次子房-灯带开关
+  v_f3_attic_downlights_on:
+    name: 虚拟-阁楼-筒灯开关
+  v_f3_attic_strip_on:
+    name: 虚拟-阁楼-灯带开关
+  v_f3_bathroom_downlights_on:
+    name: 虚拟-卫生间-筒灯开关
+  v_f3_bathroom_strip_on:
+    name: 虚拟-卫生间-灯带开关
+  v_b1_bar_downlights_on:
+    name: 虚拟-酒吧-筒灯开关
+  v_b1_bar_strip_on:
+    name: 虚拟-酒吧-灯带开关
+  v_b1_bathroom_downlights_on:
+    name: 虚拟-浴室-筒灯开关
+  v_b1_bathroom_strip_on:
+    name: 虚拟-浴室-灯带开关
+  v_b1_equipment_room_downlights_on:
+    name: 虚拟-设备间-筒灯开关
+  v_b1_equipment_room_strip_on:
+    name: 虚拟-设备间-灯带开关
+  v_b1_gym_downlights_on:
+    name: 虚拟-健身房-筒灯开关
+  v_b1_gym_strip_on:
+    name: 虚拟-健身房-灯带开关
+  v_b1_laundry_downlights_on:
+    name: 虚拟-洗衣房-筒灯开关
+  v_b1_laundry_strip_on:
+    name: 虚拟-洗衣房-灯带开关
+  v_b1_machine_room_downlights_on:
+    name: 虚拟-机房-筒灯开关
+  v_b1_machine_room_strip_on:
+    name: 虚拟-机房-灯带开关
+  v_b1_storage_downlights_on:
+    name: 虚拟-储藏间-筒灯开关
+  v_b1_storage_strip_on:
+    name: 虚拟-储藏间-灯带开关
+  v_b1_tea_room_downlights_on:
+    name: 虚拟-茶室-筒灯开关
+  v_b1_tea_room_strip_on:
+    name: 虚拟-茶室-灯带开关
+  v_b1_theater_downlights_on:
+    name: 虚拟-影音室-筒灯开关
+  v_b1_theater_strip_on:
+    name: 虚拟-影音室-灯带开关
+
+input_number:
+  v_f1_bathroom_downlights_bri:
+    name: 虚拟-卫生间-筒灯亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_f1_bathroom_strip_bri:
+    name: 虚拟-卫生间-灯带亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_f1_bathroom_strip_h:
+    name: 虚拟-卫生间-灯带色相
+    min: 0
+    max: 360
+    step: 1
+    mode: slider
+    initial: 30
+  v_f1_bathroom_strip_s:
+    name: 虚拟-卫生间-灯带饱和度
+    min: 0
+    max: 100
+    step: 1
+    mode: slider
+    initial: 80
+  v_f1_chinese_kitchen_downlights_bri:
+    name: 虚拟-中厨-筒灯亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_f1_chinese_kitchen_strip_bri:
+    name: 虚拟-中厨-灯带亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_f1_chinese_kitchen_strip_h:
+    name: 虚拟-中厨-灯带色相
+    min: 0
+    max: 360
+    step: 1
+    mode: slider
+    initial: 30
+  v_f1_chinese_kitchen_strip_s:
+    name: 虚拟-中厨-灯带饱和度
+    min: 0
+    max: 100
+    step: 1
+    mode: slider
+    initial: 80
+  v_f1_entrance_downlights_bri:
+    name: 虚拟-玄关-筒灯亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_f1_entrance_strip_bri:
+    name: 虚拟-玄关-灯带亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_f1_entrance_strip_h:
+    name: 虚拟-玄关-灯带色相
+    min: 0
+    max: 360
+    step: 1
+    mode: slider
+    initial: 30
+  v_f1_entrance_strip_s:
+    name: 虚拟-玄关-灯带饱和度
+    min: 0
+    max: 100
+    step: 1
+    mode: slider
+    initial: 80
+  v_f1_garage_downlights_bri:
+    name: 虚拟-车库-筒灯亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_f1_garage_strip_bri:
+    name: 虚拟-车库-灯带亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_f1_garage_strip_h:
+    name: 虚拟-车库-灯带色相
+    min: 0
+    max: 360
+    step: 1
+    mode: slider
+    initial: 30
+  v_f1_garage_strip_s:
+    name: 虚拟-车库-灯带饱和度
+    min: 0
+    max: 100
+    step: 1
+    mode: slider
+    initial: 80
+  v_f1_living_room_downlights_bri:
+    name: 虚拟-客厅-筒灯亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_f1_living_room_strip_bri:
+    name: 虚拟-客厅-灯带亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_f1_living_room_strip_h:
+    name: 虚拟-客厅-灯带色相
+    min: 0
+    max: 360
+    step: 1
+    mode: slider
+    initial: 30
+  v_f1_living_room_strip_s:
+    name: 虚拟-客厅-灯带饱和度
+    min: 0
+    max: 100
+    step: 1
+    mode: slider
+    initial: 80
+  v_f1_senior_bedroom_downlights_bri:
+    name: 虚拟-长辈房-筒灯亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_f1_senior_bedroom_strip_bri:
+    name: 虚拟-长辈房-灯带亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_f1_senior_bedroom_strip_h:
+    name: 虚拟-长辈房-灯带色相
+    min: 0
+    max: 360
+    step: 1
+    mode: slider
+    initial: 30
+  v_f1_senior_bedroom_strip_s:
+    name: 虚拟-长辈房-灯带饱和度
+    min: 0
+    max: 100
+    step: 1
+    mode: slider
+    initial: 80
+  v_f1_study_downlights_bri:
+    name: 虚拟-书房-筒灯亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_f1_study_strip_bri:
+    name: 虚拟-书房-灯带亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_f1_study_strip_h:
+    name: 虚拟-书房-灯带色相
+    min: 0
+    max: 360
+    step: 1
+    mode: slider
+    initial: 30
+  v_f1_study_strip_s:
+    name: 虚拟-书房-灯带饱和度
+    min: 0
+    max: 100
+    step: 1
+    mode: slider
+    initial: 80
+  v_f1_western_kitchen_downlights_bri:
+    name: 虚拟-西厨-筒灯亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_f1_western_kitchen_strip_bri:
+    name: 虚拟-西厨-灯带亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_f1_western_kitchen_strip_h:
+    name: 虚拟-西厨-灯带色相
+    min: 0
+    max: 360
+    step: 1
+    mode: slider
+    initial: 30
+  v_f1_western_kitchen_strip_s:
+    name: 虚拟-西厨-灯带饱和度
+    min: 0
+    max: 100
+    step: 1
+    mode: slider
+    initial: 80
+  v_f2_balcony_downlights_bri:
+    name: 虚拟-露台-筒灯亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_f2_balcony_strip_bri:
+    name: 虚拟-露台-灯带亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_f2_balcony_strip_h:
+    name: 虚拟-露台-灯带色相
+    min: 0
+    max: 360
+    step: 1
+    mode: slider
+    initial: 30
+  v_f2_balcony_strip_s:
+    name: 虚拟-露台-灯带饱和度
+    min: 0
+    max: 100
+    step: 1
+    mode: slider
+    initial: 80
+  v_f2_common_room_downlights_bri:
+    name: 虚拟-休闲区-筒灯亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_f2_common_room_strip_bri:
+    name: 虚拟-休闲区-灯带亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_f2_common_room_strip_h:
+    name: 虚拟-休闲区-灯带色相
+    min: 0
+    max: 360
+    step: 1
+    mode: slider
+    initial: 30
+  v_f2_common_room_strip_s:
+    name: 虚拟-休闲区-灯带饱和度
+    min: 0
+    max: 100
+    step: 1
+    mode: slider
+    initial: 80
+  v_f2_eldest_bedroom_downlights_bri:
+    name: 虚拟-长子房-筒灯亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_f2_eldest_bedroom_strip_bri:
+    name: 虚拟-长子房-灯带亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_f2_eldest_bedroom_strip_h:
+    name: 虚拟-长子房-灯带色相
+    min: 0
+    max: 360
+    step: 1
+    mode: slider
+    initial: 30
+  v_f2_eldest_bedroom_strip_s:
+    name: 虚拟-长子房-灯带饱和度
+    min: 0
+    max: 100
+    step: 1
+    mode: slider
+    initial: 80
+  v_f2_master_bedroom_downlights_bri:
+    name: 虚拟-主卧-筒灯亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_f2_master_bedroom_strip_bri:
+    name: 虚拟-主卧-灯带亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_f2_master_bedroom_strip_h:
+    name: 虚拟-主卧-灯带色相
+    min: 0
+    max: 360
+    step: 1
+    mode: slider
+    initial: 30
+  v_f2_master_bedroom_strip_s:
+    name: 虚拟-主卧-灯带饱和度
+    min: 0
+    max: 100
+    step: 1
+    mode: slider
+    initial: 80
+  v_f2_second_bedroom_downlights_bri:
+    name: 虚拟-次子房-筒灯亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_f2_second_bedroom_strip_bri:
+    name: 虚拟-次子房-灯带亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_f2_second_bedroom_strip_h:
+    name: 虚拟-次子房-灯带色相
+    min: 0
+    max: 360
+    step: 1
+    mode: slider
+    initial: 30
+  v_f2_second_bedroom_strip_s:
+    name: 虚拟-次子房-灯带饱和度
+    min: 0
+    max: 100
+    step: 1
+    mode: slider
+    initial: 80
+  v_f3_attic_downlights_bri:
+    name: 虚拟-阁楼-筒灯亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_f3_attic_strip_bri:
+    name: 虚拟-阁楼-灯带亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_f3_attic_strip_h:
+    name: 虚拟-阁楼-灯带色相
+    min: 0
+    max: 360
+    step: 1
+    mode: slider
+    initial: 30
+  v_f3_attic_strip_s:
+    name: 虚拟-阁楼-灯带饱和度
+    min: 0
+    max: 100
+    step: 1
+    mode: slider
+    initial: 80
+  v_f3_bathroom_downlights_bri:
+    name: 虚拟-卫生间-筒灯亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_f3_bathroom_strip_bri:
+    name: 虚拟-卫生间-灯带亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_f3_bathroom_strip_h:
+    name: 虚拟-卫生间-灯带色相
+    min: 0
+    max: 360
+    step: 1
+    mode: slider
+    initial: 30
+  v_f3_bathroom_strip_s:
+    name: 虚拟-卫生间-灯带饱和度
+    min: 0
+    max: 100
+    step: 1
+    mode: slider
+    initial: 80
+  v_b1_bar_downlights_bri:
+    name: 虚拟-酒吧-筒灯亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_b1_bar_strip_bri:
+    name: 虚拟-酒吧-灯带亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_b1_bar_strip_h:
+    name: 虚拟-酒吧-灯带色相
+    min: 0
+    max: 360
+    step: 1
+    mode: slider
+    initial: 30
+  v_b1_bar_strip_s:
+    name: 虚拟-酒吧-灯带饱和度
+    min: 0
+    max: 100
+    step: 1
+    mode: slider
+    initial: 80
+  v_b1_bathroom_downlights_bri:
+    name: 虚拟-浴室-筒灯亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_b1_bathroom_strip_bri:
+    name: 虚拟-浴室-灯带亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_b1_bathroom_strip_h:
+    name: 虚拟-浴室-灯带色相
+    min: 0
+    max: 360
+    step: 1
+    mode: slider
+    initial: 30
+  v_b1_bathroom_strip_s:
+    name: 虚拟-浴室-灯带饱和度
+    min: 0
+    max: 100
+    step: 1
+    mode: slider
+    initial: 80
+  v_b1_equipment_room_downlights_bri:
+    name: 虚拟-设备间-筒灯亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_b1_equipment_room_strip_bri:
+    name: 虚拟-设备间-灯带亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_b1_equipment_room_strip_h:
+    name: 虚拟-设备间-灯带色相
+    min: 0
+    max: 360
+    step: 1
+    mode: slider
+    initial: 30
+  v_b1_equipment_room_strip_s:
+    name: 虚拟-设备间-灯带饱和度
+    min: 0
+    max: 100
+    step: 1
+    mode: slider
+    initial: 80
+  v_b1_gym_downlights_bri:
+    name: 虚拟-健身房-筒灯亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_b1_gym_strip_bri:
+    name: 虚拟-健身房-灯带亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_b1_gym_strip_h:
+    name: 虚拟-健身房-灯带色相
+    min: 0
+    max: 360
+    step: 1
+    mode: slider
+    initial: 30
+  v_b1_gym_strip_s:
+    name: 虚拟-健身房-灯带饱和度
+    min: 0
+    max: 100
+    step: 1
+    mode: slider
+    initial: 80
+  v_b1_laundry_downlights_bri:
+    name: 虚拟-洗衣房-筒灯亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_b1_laundry_strip_bri:
+    name: 虚拟-洗衣房-灯带亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_b1_laundry_strip_h:
+    name: 虚拟-洗衣房-灯带色相
+    min: 0
+    max: 360
+    step: 1
+    mode: slider
+    initial: 30
+  v_b1_laundry_strip_s:
+    name: 虚拟-洗衣房-灯带饱和度
+    min: 0
+    max: 100
+    step: 1
+    mode: slider
+    initial: 80
+  v_b1_machine_room_downlights_bri:
+    name: 虚拟-机房-筒灯亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_b1_machine_room_strip_bri:
+    name: 虚拟-机房-灯带亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_b1_machine_room_strip_h:
+    name: 虚拟-机房-灯带色相
+    min: 0
+    max: 360
+    step: 1
+    mode: slider
+    initial: 30
+  v_b1_machine_room_strip_s:
+    name: 虚拟-机房-灯带饱和度
+    min: 0
+    max: 100
+    step: 1
+    mode: slider
+    initial: 80
+  v_b1_storage_downlights_bri:
+    name: 虚拟-储藏间-筒灯亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_b1_storage_strip_bri:
+    name: 虚拟-储藏间-灯带亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_b1_storage_strip_h:
+    name: 虚拟-储藏间-灯带色相
+    min: 0
+    max: 360
+    step: 1
+    mode: slider
+    initial: 30
+  v_b1_storage_strip_s:
+    name: 虚拟-储藏间-灯带饱和度
+    min: 0
+    max: 100
+    step: 1
+    mode: slider
+    initial: 80
+  v_b1_tea_room_downlights_bri:
+    name: 虚拟-茶室-筒灯亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_b1_tea_room_strip_bri:
+    name: 虚拟-茶室-灯带亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_b1_tea_room_strip_h:
+    name: 虚拟-茶室-灯带色相
+    min: 0
+    max: 360
+    step: 1
+    mode: slider
+    initial: 30
+  v_b1_tea_room_strip_s:
+    name: 虚拟-茶室-灯带饱和度
+    min: 0
+    max: 100
+    step: 1
+    mode: slider
+    initial: 80
+  v_b1_theater_downlights_bri:
+    name: 虚拟-影音室-筒灯亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_b1_theater_strip_bri:
+    name: 虚拟-影音室-灯带亮度
+    min: 1
+    max: 255
+    step: 1
+    mode: slider
+    initial: 180
+  v_b1_theater_strip_h:
+    name: 虚拟-影音室-灯带色相
+    min: 0
+    max: 360
+    step: 1
+    mode: slider
+    initial: 30
+  v_b1_theater_strip_s:
+    name: 虚拟-影音室-灯带饱和度
+    min: 0
+    max: 100
+    step: 1
+    mode: slider
+    initial: 80
+
+template:
+  - light:
+      - name: 虚拟-卫生间-筒灯
+        unique_id: v_light_f1_bathroom_downlights
+        icon: mdi:ceiling-light-multiple
+        state: "{{ is_state('input_boolean.v_f1_bathroom_downlights_on', 'on') }}"
+        level: "{{ states('input_number.v_f1_bathroom_downlights_bri') | int(180) }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_f1_bathroom_downlights_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f1_bathroom_downlights_bri
+                data:
+                  value: "{{ brightness }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_f1_bathroom_downlights_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f1_bathroom_downlights_bri
+            data:
+              value: "{{ brightness }}"
+      - name: 虚拟-卫生间-灯带
+        unique_id: v_light_f1_bathroom_strip
+        icon: mdi:led-strip-variant
+        state: "{{ is_state('input_boolean.v_f1_bathroom_strip_on', 'on') }}"
+        level: "{{ states('input_number.v_f1_bathroom_strip_bri') | int(180) }}"
+        hs: "{{ [states('input_number.v_f1_bathroom_strip_h') | float(30), states('input_number.v_f1_bathroom_strip_s') | float(80)] }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_f1_bathroom_strip_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f1_bathroom_strip_bri
+                data:
+                  value: "{{ brightness }}"
+          - if:
+              - condition: template
+                value_template: "{{ hs is defined and hs|length == 2 }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f1_bathroom_strip_h
+                data:
+                  value: "{{ hs[0] }}"
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f1_bathroom_strip_s
+                data:
+                  value: "{{ hs[1] }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_f1_bathroom_strip_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f1_bathroom_strip_bri
+            data:
+              value: "{{ brightness }}"
+        set_hs:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f1_bathroom_strip_h
+            data:
+              value: "{{ hs[0] }}"
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f1_bathroom_strip_s
+            data:
+              value: "{{ hs[1] }}"
+      - name: 虚拟-中厨-筒灯
+        unique_id: v_light_f1_chinese_kitchen_downlights
+        icon: mdi:ceiling-light-multiple
+        state: "{{ is_state('input_boolean.v_f1_chinese_kitchen_downlights_on', 'on') }}"
+        level: "{{ states('input_number.v_f1_chinese_kitchen_downlights_bri') | int(180) }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_f1_chinese_kitchen_downlights_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f1_chinese_kitchen_downlights_bri
+                data:
+                  value: "{{ brightness }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_f1_chinese_kitchen_downlights_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f1_chinese_kitchen_downlights_bri
+            data:
+              value: "{{ brightness }}"
+      - name: 虚拟-中厨-灯带
+        unique_id: v_light_f1_chinese_kitchen_strip
+        icon: mdi:led-strip-variant
+        state: "{{ is_state('input_boolean.v_f1_chinese_kitchen_strip_on', 'on') }}"
+        level: "{{ states('input_number.v_f1_chinese_kitchen_strip_bri') | int(180) }}"
+        hs: "{{ [states('input_number.v_f1_chinese_kitchen_strip_h') | float(30), states('input_number.v_f1_chinese_kitchen_strip_s') | float(80)] }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_f1_chinese_kitchen_strip_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f1_chinese_kitchen_strip_bri
+                data:
+                  value: "{{ brightness }}"
+          - if:
+              - condition: template
+                value_template: "{{ hs is defined and hs|length == 2 }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f1_chinese_kitchen_strip_h
+                data:
+                  value: "{{ hs[0] }}"
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f1_chinese_kitchen_strip_s
+                data:
+                  value: "{{ hs[1] }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_f1_chinese_kitchen_strip_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f1_chinese_kitchen_strip_bri
+            data:
+              value: "{{ brightness }}"
+        set_hs:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f1_chinese_kitchen_strip_h
+            data:
+              value: "{{ hs[0] }}"
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f1_chinese_kitchen_strip_s
+            data:
+              value: "{{ hs[1] }}"
+      - name: 虚拟-玄关-筒灯
+        unique_id: v_light_f1_entrance_downlights
+        icon: mdi:ceiling-light-multiple
+        state: "{{ is_state('input_boolean.v_f1_entrance_downlights_on', 'on') }}"
+        level: "{{ states('input_number.v_f1_entrance_downlights_bri') | int(180) }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_f1_entrance_downlights_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f1_entrance_downlights_bri
+                data:
+                  value: "{{ brightness }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_f1_entrance_downlights_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f1_entrance_downlights_bri
+            data:
+              value: "{{ brightness }}"
+      - name: 虚拟-玄关-灯带
+        unique_id: v_light_f1_entrance_strip
+        icon: mdi:led-strip-variant
+        state: "{{ is_state('input_boolean.v_f1_entrance_strip_on', 'on') }}"
+        level: "{{ states('input_number.v_f1_entrance_strip_bri') | int(180) }}"
+        hs: "{{ [states('input_number.v_f1_entrance_strip_h') | float(30), states('input_number.v_f1_entrance_strip_s') | float(80)] }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_f1_entrance_strip_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f1_entrance_strip_bri
+                data:
+                  value: "{{ brightness }}"
+          - if:
+              - condition: template
+                value_template: "{{ hs is defined and hs|length == 2 }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f1_entrance_strip_h
+                data:
+                  value: "{{ hs[0] }}"
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f1_entrance_strip_s
+                data:
+                  value: "{{ hs[1] }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_f1_entrance_strip_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f1_entrance_strip_bri
+            data:
+              value: "{{ brightness }}"
+        set_hs:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f1_entrance_strip_h
+            data:
+              value: "{{ hs[0] }}"
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f1_entrance_strip_s
+            data:
+              value: "{{ hs[1] }}"
+      - name: 虚拟-车库-筒灯
+        unique_id: v_light_f1_garage_downlights
+        icon: mdi:ceiling-light-multiple
+        state: "{{ is_state('input_boolean.v_f1_garage_downlights_on', 'on') }}"
+        level: "{{ states('input_number.v_f1_garage_downlights_bri') | int(180) }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_f1_garage_downlights_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f1_garage_downlights_bri
+                data:
+                  value: "{{ brightness }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_f1_garage_downlights_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f1_garage_downlights_bri
+            data:
+              value: "{{ brightness }}"
+      - name: 虚拟-车库-灯带
+        unique_id: v_light_f1_garage_strip
+        icon: mdi:led-strip-variant
+        state: "{{ is_state('input_boolean.v_f1_garage_strip_on', 'on') }}"
+        level: "{{ states('input_number.v_f1_garage_strip_bri') | int(180) }}"
+        hs: "{{ [states('input_number.v_f1_garage_strip_h') | float(30), states('input_number.v_f1_garage_strip_s') | float(80)] }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_f1_garage_strip_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f1_garage_strip_bri
+                data:
+                  value: "{{ brightness }}"
+          - if:
+              - condition: template
+                value_template: "{{ hs is defined and hs|length == 2 }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f1_garage_strip_h
+                data:
+                  value: "{{ hs[0] }}"
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f1_garage_strip_s
+                data:
+                  value: "{{ hs[1] }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_f1_garage_strip_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f1_garage_strip_bri
+            data:
+              value: "{{ brightness }}"
+        set_hs:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f1_garage_strip_h
+            data:
+              value: "{{ hs[0] }}"
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f1_garage_strip_s
+            data:
+              value: "{{ hs[1] }}"
+      - name: 虚拟-客厅-筒灯
+        unique_id: v_light_f1_living_room_downlights
+        icon: mdi:ceiling-light-multiple
+        state: "{{ is_state('input_boolean.v_f1_living_room_downlights_on', 'on') }}"
+        level: "{{ states('input_number.v_f1_living_room_downlights_bri') | int(180) }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_f1_living_room_downlights_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f1_living_room_downlights_bri
+                data:
+                  value: "{{ brightness }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_f1_living_room_downlights_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f1_living_room_downlights_bri
+            data:
+              value: "{{ brightness }}"
+      - name: 虚拟-客厅-灯带
+        unique_id: v_light_f1_living_room_strip
+        icon: mdi:led-strip-variant
+        state: "{{ is_state('input_boolean.v_f1_living_room_strip_on', 'on') }}"
+        level: "{{ states('input_number.v_f1_living_room_strip_bri') | int(180) }}"
+        hs: "{{ [states('input_number.v_f1_living_room_strip_h') | float(30), states('input_number.v_f1_living_room_strip_s') | float(80)] }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_f1_living_room_strip_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f1_living_room_strip_bri
+                data:
+                  value: "{{ brightness }}"
+          - if:
+              - condition: template
+                value_template: "{{ hs is defined and hs|length == 2 }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f1_living_room_strip_h
+                data:
+                  value: "{{ hs[0] }}"
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f1_living_room_strip_s
+                data:
+                  value: "{{ hs[1] }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_f1_living_room_strip_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f1_living_room_strip_bri
+            data:
+              value: "{{ brightness }}"
+        set_hs:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f1_living_room_strip_h
+            data:
+              value: "{{ hs[0] }}"
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f1_living_room_strip_s
+            data:
+              value: "{{ hs[1] }}"
+      - name: 虚拟-长辈房-筒灯
+        unique_id: v_light_f1_senior_bedroom_downlights
+        icon: mdi:ceiling-light-multiple
+        state: "{{ is_state('input_boolean.v_f1_senior_bedroom_downlights_on', 'on') }}"
+        level: "{{ states('input_number.v_f1_senior_bedroom_downlights_bri') | int(180) }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_f1_senior_bedroom_downlights_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f1_senior_bedroom_downlights_bri
+                data:
+                  value: "{{ brightness }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_f1_senior_bedroom_downlights_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f1_senior_bedroom_downlights_bri
+            data:
+              value: "{{ brightness }}"
+      - name: 虚拟-长辈房-灯带
+        unique_id: v_light_f1_senior_bedroom_strip
+        icon: mdi:led-strip-variant
+        state: "{{ is_state('input_boolean.v_f1_senior_bedroom_strip_on', 'on') }}"
+        level: "{{ states('input_number.v_f1_senior_bedroom_strip_bri') | int(180) }}"
+        hs: "{{ [states('input_number.v_f1_senior_bedroom_strip_h') | float(30), states('input_number.v_f1_senior_bedroom_strip_s') | float(80)] }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_f1_senior_bedroom_strip_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f1_senior_bedroom_strip_bri
+                data:
+                  value: "{{ brightness }}"
+          - if:
+              - condition: template
+                value_template: "{{ hs is defined and hs|length == 2 }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f1_senior_bedroom_strip_h
+                data:
+                  value: "{{ hs[0] }}"
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f1_senior_bedroom_strip_s
+                data:
+                  value: "{{ hs[1] }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_f1_senior_bedroom_strip_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f1_senior_bedroom_strip_bri
+            data:
+              value: "{{ brightness }}"
+        set_hs:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f1_senior_bedroom_strip_h
+            data:
+              value: "{{ hs[0] }}"
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f1_senior_bedroom_strip_s
+            data:
+              value: "{{ hs[1] }}"
+      - name: 虚拟-书房-筒灯
+        unique_id: v_light_f1_study_downlights
+        icon: mdi:ceiling-light-multiple
+        state: "{{ is_state('input_boolean.v_f1_study_downlights_on', 'on') }}"
+        level: "{{ states('input_number.v_f1_study_downlights_bri') | int(180) }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_f1_study_downlights_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f1_study_downlights_bri
+                data:
+                  value: "{{ brightness }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_f1_study_downlights_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f1_study_downlights_bri
+            data:
+              value: "{{ brightness }}"
+      - name: 虚拟-书房-灯带
+        unique_id: v_light_f1_study_strip
+        icon: mdi:led-strip-variant
+        state: "{{ is_state('input_boolean.v_f1_study_strip_on', 'on') }}"
+        level: "{{ states('input_number.v_f1_study_strip_bri') | int(180) }}"
+        hs: "{{ [states('input_number.v_f1_study_strip_h') | float(30), states('input_number.v_f1_study_strip_s') | float(80)] }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_f1_study_strip_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f1_study_strip_bri
+                data:
+                  value: "{{ brightness }}"
+          - if:
+              - condition: template
+                value_template: "{{ hs is defined and hs|length == 2 }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f1_study_strip_h
+                data:
+                  value: "{{ hs[0] }}"
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f1_study_strip_s
+                data:
+                  value: "{{ hs[1] }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_f1_study_strip_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f1_study_strip_bri
+            data:
+              value: "{{ brightness }}"
+        set_hs:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f1_study_strip_h
+            data:
+              value: "{{ hs[0] }}"
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f1_study_strip_s
+            data:
+              value: "{{ hs[1] }}"
+      - name: 虚拟-西厨-筒灯
+        unique_id: v_light_f1_western_kitchen_downlights
+        icon: mdi:ceiling-light-multiple
+        state: "{{ is_state('input_boolean.v_f1_western_kitchen_downlights_on', 'on') }}"
+        level: "{{ states('input_number.v_f1_western_kitchen_downlights_bri') | int(180) }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_f1_western_kitchen_downlights_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f1_western_kitchen_downlights_bri
+                data:
+                  value: "{{ brightness }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_f1_western_kitchen_downlights_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f1_western_kitchen_downlights_bri
+            data:
+              value: "{{ brightness }}"
+      - name: 虚拟-西厨-灯带
+        unique_id: v_light_f1_western_kitchen_strip
+        icon: mdi:led-strip-variant
+        state: "{{ is_state('input_boolean.v_f1_western_kitchen_strip_on', 'on') }}"
+        level: "{{ states('input_number.v_f1_western_kitchen_strip_bri') | int(180) }}"
+        hs: "{{ [states('input_number.v_f1_western_kitchen_strip_h') | float(30), states('input_number.v_f1_western_kitchen_strip_s') | float(80)] }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_f1_western_kitchen_strip_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f1_western_kitchen_strip_bri
+                data:
+                  value: "{{ brightness }}"
+          - if:
+              - condition: template
+                value_template: "{{ hs is defined and hs|length == 2 }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f1_western_kitchen_strip_h
+                data:
+                  value: "{{ hs[0] }}"
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f1_western_kitchen_strip_s
+                data:
+                  value: "{{ hs[1] }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_f1_western_kitchen_strip_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f1_western_kitchen_strip_bri
+            data:
+              value: "{{ brightness }}"
+        set_hs:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f1_western_kitchen_strip_h
+            data:
+              value: "{{ hs[0] }}"
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f1_western_kitchen_strip_s
+            data:
+              value: "{{ hs[1] }}"
+      - name: 虚拟-露台-筒灯
+        unique_id: v_light_f2_balcony_downlights
+        icon: mdi:ceiling-light-multiple
+        state: "{{ is_state('input_boolean.v_f2_balcony_downlights_on', 'on') }}"
+        level: "{{ states('input_number.v_f2_balcony_downlights_bri') | int(180) }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_f2_balcony_downlights_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f2_balcony_downlights_bri
+                data:
+                  value: "{{ brightness }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_f2_balcony_downlights_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f2_balcony_downlights_bri
+            data:
+              value: "{{ brightness }}"
+      - name: 虚拟-露台-灯带
+        unique_id: v_light_f2_balcony_strip
+        icon: mdi:led-strip-variant
+        state: "{{ is_state('input_boolean.v_f2_balcony_strip_on', 'on') }}"
+        level: "{{ states('input_number.v_f2_balcony_strip_bri') | int(180) }}"
+        hs: "{{ [states('input_number.v_f2_balcony_strip_h') | float(30), states('input_number.v_f2_balcony_strip_s') | float(80)] }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_f2_balcony_strip_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f2_balcony_strip_bri
+                data:
+                  value: "{{ brightness }}"
+          - if:
+              - condition: template
+                value_template: "{{ hs is defined and hs|length == 2 }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f2_balcony_strip_h
+                data:
+                  value: "{{ hs[0] }}"
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f2_balcony_strip_s
+                data:
+                  value: "{{ hs[1] }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_f2_balcony_strip_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f2_balcony_strip_bri
+            data:
+              value: "{{ brightness }}"
+        set_hs:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f2_balcony_strip_h
+            data:
+              value: "{{ hs[0] }}"
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f2_balcony_strip_s
+            data:
+              value: "{{ hs[1] }}"
+      - name: 虚拟-休闲区-筒灯
+        unique_id: v_light_f2_common_room_downlights
+        icon: mdi:ceiling-light-multiple
+        state: "{{ is_state('input_boolean.v_f2_common_room_downlights_on', 'on') }}"
+        level: "{{ states('input_number.v_f2_common_room_downlights_bri') | int(180) }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_f2_common_room_downlights_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f2_common_room_downlights_bri
+                data:
+                  value: "{{ brightness }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_f2_common_room_downlights_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f2_common_room_downlights_bri
+            data:
+              value: "{{ brightness }}"
+      - name: 虚拟-休闲区-灯带
+        unique_id: v_light_f2_common_room_strip
+        icon: mdi:led-strip-variant
+        state: "{{ is_state('input_boolean.v_f2_common_room_strip_on', 'on') }}"
+        level: "{{ states('input_number.v_f2_common_room_strip_bri') | int(180) }}"
+        hs: "{{ [states('input_number.v_f2_common_room_strip_h') | float(30), states('input_number.v_f2_common_room_strip_s') | float(80)] }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_f2_common_room_strip_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f2_common_room_strip_bri
+                data:
+                  value: "{{ brightness }}"
+          - if:
+              - condition: template
+                value_template: "{{ hs is defined and hs|length == 2 }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f2_common_room_strip_h
+                data:
+                  value: "{{ hs[0] }}"
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f2_common_room_strip_s
+                data:
+                  value: "{{ hs[1] }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_f2_common_room_strip_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f2_common_room_strip_bri
+            data:
+              value: "{{ brightness }}"
+        set_hs:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f2_common_room_strip_h
+            data:
+              value: "{{ hs[0] }}"
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f2_common_room_strip_s
+            data:
+              value: "{{ hs[1] }}"
+      - name: 虚拟-长子房-筒灯
+        unique_id: v_light_f2_eldest_bedroom_downlights
+        icon: mdi:ceiling-light-multiple
+        state: "{{ is_state('input_boolean.v_f2_eldest_bedroom_downlights_on', 'on') }}"
+        level: "{{ states('input_number.v_f2_eldest_bedroom_downlights_bri') | int(180) }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_f2_eldest_bedroom_downlights_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f2_eldest_bedroom_downlights_bri
+                data:
+                  value: "{{ brightness }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_f2_eldest_bedroom_downlights_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f2_eldest_bedroom_downlights_bri
+            data:
+              value: "{{ brightness }}"
+      - name: 虚拟-长子房-灯带
+        unique_id: v_light_f2_eldest_bedroom_strip
+        icon: mdi:led-strip-variant
+        state: "{{ is_state('input_boolean.v_f2_eldest_bedroom_strip_on', 'on') }}"
+        level: "{{ states('input_number.v_f2_eldest_bedroom_strip_bri') | int(180) }}"
+        hs: "{{ [states('input_number.v_f2_eldest_bedroom_strip_h') | float(30), states('input_number.v_f2_eldest_bedroom_strip_s') | float(80)] }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_f2_eldest_bedroom_strip_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f2_eldest_bedroom_strip_bri
+                data:
+                  value: "{{ brightness }}"
+          - if:
+              - condition: template
+                value_template: "{{ hs is defined and hs|length == 2 }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f2_eldest_bedroom_strip_h
+                data:
+                  value: "{{ hs[0] }}"
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f2_eldest_bedroom_strip_s
+                data:
+                  value: "{{ hs[1] }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_f2_eldest_bedroom_strip_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f2_eldest_bedroom_strip_bri
+            data:
+              value: "{{ brightness }}"
+        set_hs:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f2_eldest_bedroom_strip_h
+            data:
+              value: "{{ hs[0] }}"
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f2_eldest_bedroom_strip_s
+            data:
+              value: "{{ hs[1] }}"
+      - name: 虚拟-主卧-筒灯
+        unique_id: v_light_f2_master_bedroom_downlights
+        icon: mdi:ceiling-light-multiple
+        state: "{{ is_state('input_boolean.v_f2_master_bedroom_downlights_on', 'on') }}"
+        level: "{{ states('input_number.v_f2_master_bedroom_downlights_bri') | int(180) }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_f2_master_bedroom_downlights_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f2_master_bedroom_downlights_bri
+                data:
+                  value: "{{ brightness }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_f2_master_bedroom_downlights_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f2_master_bedroom_downlights_bri
+            data:
+              value: "{{ brightness }}"
+      - name: 虚拟-主卧-灯带
+        unique_id: v_light_f2_master_bedroom_strip
+        icon: mdi:led-strip-variant
+        state: "{{ is_state('input_boolean.v_f2_master_bedroom_strip_on', 'on') }}"
+        level: "{{ states('input_number.v_f2_master_bedroom_strip_bri') | int(180) }}"
+        hs: "{{ [states('input_number.v_f2_master_bedroom_strip_h') | float(30), states('input_number.v_f2_master_bedroom_strip_s') | float(80)] }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_f2_master_bedroom_strip_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f2_master_bedroom_strip_bri
+                data:
+                  value: "{{ brightness }}"
+          - if:
+              - condition: template
+                value_template: "{{ hs is defined and hs|length == 2 }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f2_master_bedroom_strip_h
+                data:
+                  value: "{{ hs[0] }}"
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f2_master_bedroom_strip_s
+                data:
+                  value: "{{ hs[1] }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_f2_master_bedroom_strip_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f2_master_bedroom_strip_bri
+            data:
+              value: "{{ brightness }}"
+        set_hs:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f2_master_bedroom_strip_h
+            data:
+              value: "{{ hs[0] }}"
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f2_master_bedroom_strip_s
+            data:
+              value: "{{ hs[1] }}"
+      - name: 虚拟-次子房-筒灯
+        unique_id: v_light_f2_second_bedroom_downlights
+        icon: mdi:ceiling-light-multiple
+        state: "{{ is_state('input_boolean.v_f2_second_bedroom_downlights_on', 'on') }}"
+        level: "{{ states('input_number.v_f2_second_bedroom_downlights_bri') | int(180) }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_f2_second_bedroom_downlights_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f2_second_bedroom_downlights_bri
+                data:
+                  value: "{{ brightness }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_f2_second_bedroom_downlights_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f2_second_bedroom_downlights_bri
+            data:
+              value: "{{ brightness }}"
+      - name: 虚拟-次子房-灯带
+        unique_id: v_light_f2_second_bedroom_strip
+        icon: mdi:led-strip-variant
+        state: "{{ is_state('input_boolean.v_f2_second_bedroom_strip_on', 'on') }}"
+        level: "{{ states('input_number.v_f2_second_bedroom_strip_bri') | int(180) }}"
+        hs: "{{ [states('input_number.v_f2_second_bedroom_strip_h') | float(30), states('input_number.v_f2_second_bedroom_strip_s') | float(80)] }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_f2_second_bedroom_strip_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f2_second_bedroom_strip_bri
+                data:
+                  value: "{{ brightness }}"
+          - if:
+              - condition: template
+                value_template: "{{ hs is defined and hs|length == 2 }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f2_second_bedroom_strip_h
+                data:
+                  value: "{{ hs[0] }}"
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f2_second_bedroom_strip_s
+                data:
+                  value: "{{ hs[1] }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_f2_second_bedroom_strip_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f2_second_bedroom_strip_bri
+            data:
+              value: "{{ brightness }}"
+        set_hs:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f2_second_bedroom_strip_h
+            data:
+              value: "{{ hs[0] }}"
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f2_second_bedroom_strip_s
+            data:
+              value: "{{ hs[1] }}"
+      - name: 虚拟-阁楼-筒灯
+        unique_id: v_light_f3_attic_downlights
+        icon: mdi:ceiling-light-multiple
+        state: "{{ is_state('input_boolean.v_f3_attic_downlights_on', 'on') }}"
+        level: "{{ states('input_number.v_f3_attic_downlights_bri') | int(180) }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_f3_attic_downlights_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f3_attic_downlights_bri
+                data:
+                  value: "{{ brightness }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_f3_attic_downlights_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f3_attic_downlights_bri
+            data:
+              value: "{{ brightness }}"
+      - name: 虚拟-阁楼-灯带
+        unique_id: v_light_f3_attic_strip
+        icon: mdi:led-strip-variant
+        state: "{{ is_state('input_boolean.v_f3_attic_strip_on', 'on') }}"
+        level: "{{ states('input_number.v_f3_attic_strip_bri') | int(180) }}"
+        hs: "{{ [states('input_number.v_f3_attic_strip_h') | float(30), states('input_number.v_f3_attic_strip_s') | float(80)] }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_f3_attic_strip_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f3_attic_strip_bri
+                data:
+                  value: "{{ brightness }}"
+          - if:
+              - condition: template
+                value_template: "{{ hs is defined and hs|length == 2 }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f3_attic_strip_h
+                data:
+                  value: "{{ hs[0] }}"
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f3_attic_strip_s
+                data:
+                  value: "{{ hs[1] }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_f3_attic_strip_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f3_attic_strip_bri
+            data:
+              value: "{{ brightness }}"
+        set_hs:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f3_attic_strip_h
+            data:
+              value: "{{ hs[0] }}"
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f3_attic_strip_s
+            data:
+              value: "{{ hs[1] }}"
+      - name: 虚拟-卫生间-筒灯
+        unique_id: v_light_f3_bathroom_downlights
+        icon: mdi:ceiling-light-multiple
+        state: "{{ is_state('input_boolean.v_f3_bathroom_downlights_on', 'on') }}"
+        level: "{{ states('input_number.v_f3_bathroom_downlights_bri') | int(180) }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_f3_bathroom_downlights_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f3_bathroom_downlights_bri
+                data:
+                  value: "{{ brightness }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_f3_bathroom_downlights_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f3_bathroom_downlights_bri
+            data:
+              value: "{{ brightness }}"
+      - name: 虚拟-卫生间-灯带
+        unique_id: v_light_f3_bathroom_strip
+        icon: mdi:led-strip-variant
+        state: "{{ is_state('input_boolean.v_f3_bathroom_strip_on', 'on') }}"
+        level: "{{ states('input_number.v_f3_bathroom_strip_bri') | int(180) }}"
+        hs: "{{ [states('input_number.v_f3_bathroom_strip_h') | float(30), states('input_number.v_f3_bathroom_strip_s') | float(80)] }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_f3_bathroom_strip_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f3_bathroom_strip_bri
+                data:
+                  value: "{{ brightness }}"
+          - if:
+              - condition: template
+                value_template: "{{ hs is defined and hs|length == 2 }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f3_bathroom_strip_h
+                data:
+                  value: "{{ hs[0] }}"
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_f3_bathroom_strip_s
+                data:
+                  value: "{{ hs[1] }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_f3_bathroom_strip_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f3_bathroom_strip_bri
+            data:
+              value: "{{ brightness }}"
+        set_hs:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f3_bathroom_strip_h
+            data:
+              value: "{{ hs[0] }}"
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_f3_bathroom_strip_s
+            data:
+              value: "{{ hs[1] }}"
+      - name: 虚拟-酒吧-筒灯
+        unique_id: v_light_b1_bar_downlights
+        icon: mdi:ceiling-light-multiple
+        state: "{{ is_state('input_boolean.v_b1_bar_downlights_on', 'on') }}"
+        level: "{{ states('input_number.v_b1_bar_downlights_bri') | int(180) }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_b1_bar_downlights_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_b1_bar_downlights_bri
+                data:
+                  value: "{{ brightness }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_b1_bar_downlights_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_b1_bar_downlights_bri
+            data:
+              value: "{{ brightness }}"
+      - name: 虚拟-酒吧-灯带
+        unique_id: v_light_b1_bar_strip
+        icon: mdi:led-strip-variant
+        state: "{{ is_state('input_boolean.v_b1_bar_strip_on', 'on') }}"
+        level: "{{ states('input_number.v_b1_bar_strip_bri') | int(180) }}"
+        hs: "{{ [states('input_number.v_b1_bar_strip_h') | float(30), states('input_number.v_b1_bar_strip_s') | float(80)] }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_b1_bar_strip_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_b1_bar_strip_bri
+                data:
+                  value: "{{ brightness }}"
+          - if:
+              - condition: template
+                value_template: "{{ hs is defined and hs|length == 2 }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_b1_bar_strip_h
+                data:
+                  value: "{{ hs[0] }}"
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_b1_bar_strip_s
+                data:
+                  value: "{{ hs[1] }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_b1_bar_strip_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_b1_bar_strip_bri
+            data:
+              value: "{{ brightness }}"
+        set_hs:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_b1_bar_strip_h
+            data:
+              value: "{{ hs[0] }}"
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_b1_bar_strip_s
+            data:
+              value: "{{ hs[1] }}"
+      - name: 虚拟-浴室-筒灯
+        unique_id: v_light_b1_bathroom_downlights
+        icon: mdi:ceiling-light-multiple
+        state: "{{ is_state('input_boolean.v_b1_bathroom_downlights_on', 'on') }}"
+        level: "{{ states('input_number.v_b1_bathroom_downlights_bri') | int(180) }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_b1_bathroom_downlights_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_b1_bathroom_downlights_bri
+                data:
+                  value: "{{ brightness }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_b1_bathroom_downlights_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_b1_bathroom_downlights_bri
+            data:
+              value: "{{ brightness }}"
+      - name: 虚拟-浴室-灯带
+        unique_id: v_light_b1_bathroom_strip
+        icon: mdi:led-strip-variant
+        state: "{{ is_state('input_boolean.v_b1_bathroom_strip_on', 'on') }}"
+        level: "{{ states('input_number.v_b1_bathroom_strip_bri') | int(180) }}"
+        hs: "{{ [states('input_number.v_b1_bathroom_strip_h') | float(30), states('input_number.v_b1_bathroom_strip_s') | float(80)] }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_b1_bathroom_strip_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_b1_bathroom_strip_bri
+                data:
+                  value: "{{ brightness }}"
+          - if:
+              - condition: template
+                value_template: "{{ hs is defined and hs|length == 2 }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_b1_bathroom_strip_h
+                data:
+                  value: "{{ hs[0] }}"
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_b1_bathroom_strip_s
+                data:
+                  value: "{{ hs[1] }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_b1_bathroom_strip_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_b1_bathroom_strip_bri
+            data:
+              value: "{{ brightness }}"
+        set_hs:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_b1_bathroom_strip_h
+            data:
+              value: "{{ hs[0] }}"
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_b1_bathroom_strip_s
+            data:
+              value: "{{ hs[1] }}"
+      - name: 虚拟-设备间-筒灯
+        unique_id: v_light_b1_equipment_room_downlights
+        icon: mdi:ceiling-light-multiple
+        state: "{{ is_state('input_boolean.v_b1_equipment_room_downlights_on', 'on') }}"
+        level: "{{ states('input_number.v_b1_equipment_room_downlights_bri') | int(180) }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_b1_equipment_room_downlights_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_b1_equipment_room_downlights_bri
+                data:
+                  value: "{{ brightness }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_b1_equipment_room_downlights_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_b1_equipment_room_downlights_bri
+            data:
+              value: "{{ brightness }}"
+      - name: 虚拟-设备间-灯带
+        unique_id: v_light_b1_equipment_room_strip
+        icon: mdi:led-strip-variant
+        state: "{{ is_state('input_boolean.v_b1_equipment_room_strip_on', 'on') }}"
+        level: "{{ states('input_number.v_b1_equipment_room_strip_bri') | int(180) }}"
+        hs: "{{ [states('input_number.v_b1_equipment_room_strip_h') | float(30), states('input_number.v_b1_equipment_room_strip_s') | float(80)] }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_b1_equipment_room_strip_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_b1_equipment_room_strip_bri
+                data:
+                  value: "{{ brightness }}"
+          - if:
+              - condition: template
+                value_template: "{{ hs is defined and hs|length == 2 }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_b1_equipment_room_strip_h
+                data:
+                  value: "{{ hs[0] }}"
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_b1_equipment_room_strip_s
+                data:
+                  value: "{{ hs[1] }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_b1_equipment_room_strip_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_b1_equipment_room_strip_bri
+            data:
+              value: "{{ brightness }}"
+        set_hs:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_b1_equipment_room_strip_h
+            data:
+              value: "{{ hs[0] }}"
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_b1_equipment_room_strip_s
+            data:
+              value: "{{ hs[1] }}"
+      - name: 虚拟-健身房-筒灯
+        unique_id: v_light_b1_gym_downlights
+        icon: mdi:ceiling-light-multiple
+        state: "{{ is_state('input_boolean.v_b1_gym_downlights_on', 'on') }}"
+        level: "{{ states('input_number.v_b1_gym_downlights_bri') | int(180) }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_b1_gym_downlights_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_b1_gym_downlights_bri
+                data:
+                  value: "{{ brightness }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_b1_gym_downlights_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_b1_gym_downlights_bri
+            data:
+              value: "{{ brightness }}"
+      - name: 虚拟-健身房-灯带
+        unique_id: v_light_b1_gym_strip
+        icon: mdi:led-strip-variant
+        state: "{{ is_state('input_boolean.v_b1_gym_strip_on', 'on') }}"
+        level: "{{ states('input_number.v_b1_gym_strip_bri') | int(180) }}"
+        hs: "{{ [states('input_number.v_b1_gym_strip_h') | float(30), states('input_number.v_b1_gym_strip_s') | float(80)] }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_b1_gym_strip_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_b1_gym_strip_bri
+                data:
+                  value: "{{ brightness }}"
+          - if:
+              - condition: template
+                value_template: "{{ hs is defined and hs|length == 2 }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_b1_gym_strip_h
+                data:
+                  value: "{{ hs[0] }}"
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_b1_gym_strip_s
+                data:
+                  value: "{{ hs[1] }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_b1_gym_strip_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_b1_gym_strip_bri
+            data:
+              value: "{{ brightness }}"
+        set_hs:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_b1_gym_strip_h
+            data:
+              value: "{{ hs[0] }}"
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_b1_gym_strip_s
+            data:
+              value: "{{ hs[1] }}"
+      - name: 虚拟-洗衣房-筒灯
+        unique_id: v_light_b1_laundry_downlights
+        icon: mdi:ceiling-light-multiple
+        state: "{{ is_state('input_boolean.v_b1_laundry_downlights_on', 'on') }}"
+        level: "{{ states('input_number.v_b1_laundry_downlights_bri') | int(180) }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_b1_laundry_downlights_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_b1_laundry_downlights_bri
+                data:
+                  value: "{{ brightness }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_b1_laundry_downlights_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_b1_laundry_downlights_bri
+            data:
+              value: "{{ brightness }}"
+      - name: 虚拟-洗衣房-灯带
+        unique_id: v_light_b1_laundry_strip
+        icon: mdi:led-strip-variant
+        state: "{{ is_state('input_boolean.v_b1_laundry_strip_on', 'on') }}"
+        level: "{{ states('input_number.v_b1_laundry_strip_bri') | int(180) }}"
+        hs: "{{ [states('input_number.v_b1_laundry_strip_h') | float(30), states('input_number.v_b1_laundry_strip_s') | float(80)] }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_b1_laundry_strip_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_b1_laundry_strip_bri
+                data:
+                  value: "{{ brightness }}"
+          - if:
+              - condition: template
+                value_template: "{{ hs is defined and hs|length == 2 }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_b1_laundry_strip_h
+                data:
+                  value: "{{ hs[0] }}"
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_b1_laundry_strip_s
+                data:
+                  value: "{{ hs[1] }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_b1_laundry_strip_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_b1_laundry_strip_bri
+            data:
+              value: "{{ brightness }}"
+        set_hs:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_b1_laundry_strip_h
+            data:
+              value: "{{ hs[0] }}"
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_b1_laundry_strip_s
+            data:
+              value: "{{ hs[1] }}"
+      - name: 虚拟-机房-筒灯
+        unique_id: v_light_b1_machine_room_downlights
+        icon: mdi:ceiling-light-multiple
+        state: "{{ is_state('input_boolean.v_b1_machine_room_downlights_on', 'on') }}"
+        level: "{{ states('input_number.v_b1_machine_room_downlights_bri') | int(180) }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_b1_machine_room_downlights_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_b1_machine_room_downlights_bri
+                data:
+                  value: "{{ brightness }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_b1_machine_room_downlights_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_b1_machine_room_downlights_bri
+            data:
+              value: "{{ brightness }}"
+      - name: 虚拟-机房-灯带
+        unique_id: v_light_b1_machine_room_strip
+        icon: mdi:led-strip-variant
+        state: "{{ is_state('input_boolean.v_b1_machine_room_strip_on', 'on') }}"
+        level: "{{ states('input_number.v_b1_machine_room_strip_bri') | int(180) }}"
+        hs: "{{ [states('input_number.v_b1_machine_room_strip_h') | float(30), states('input_number.v_b1_machine_room_strip_s') | float(80)] }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_b1_machine_room_strip_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_b1_machine_room_strip_bri
+                data:
+                  value: "{{ brightness }}"
+          - if:
+              - condition: template
+                value_template: "{{ hs is defined and hs|length == 2 }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_b1_machine_room_strip_h
+                data:
+                  value: "{{ hs[0] }}"
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_b1_machine_room_strip_s
+                data:
+                  value: "{{ hs[1] }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_b1_machine_room_strip_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_b1_machine_room_strip_bri
+            data:
+              value: "{{ brightness }}"
+        set_hs:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_b1_machine_room_strip_h
+            data:
+              value: "{{ hs[0] }}"
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_b1_machine_room_strip_s
+            data:
+              value: "{{ hs[1] }}"
+      - name: 虚拟-储藏间-筒灯
+        unique_id: v_light_b1_storage_downlights
+        icon: mdi:ceiling-light-multiple
+        state: "{{ is_state('input_boolean.v_b1_storage_downlights_on', 'on') }}"
+        level: "{{ states('input_number.v_b1_storage_downlights_bri') | int(180) }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_b1_storage_downlights_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_b1_storage_downlights_bri
+                data:
+                  value: "{{ brightness }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_b1_storage_downlights_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_b1_storage_downlights_bri
+            data:
+              value: "{{ brightness }}"
+      - name: 虚拟-储藏间-灯带
+        unique_id: v_light_b1_storage_strip
+        icon: mdi:led-strip-variant
+        state: "{{ is_state('input_boolean.v_b1_storage_strip_on', 'on') }}"
+        level: "{{ states('input_number.v_b1_storage_strip_bri') | int(180) }}"
+        hs: "{{ [states('input_number.v_b1_storage_strip_h') | float(30), states('input_number.v_b1_storage_strip_s') | float(80)] }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_b1_storage_strip_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_b1_storage_strip_bri
+                data:
+                  value: "{{ brightness }}"
+          - if:
+              - condition: template
+                value_template: "{{ hs is defined and hs|length == 2 }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_b1_storage_strip_h
+                data:
+                  value: "{{ hs[0] }}"
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_b1_storage_strip_s
+                data:
+                  value: "{{ hs[1] }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_b1_storage_strip_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_b1_storage_strip_bri
+            data:
+              value: "{{ brightness }}"
+        set_hs:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_b1_storage_strip_h
+            data:
+              value: "{{ hs[0] }}"
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_b1_storage_strip_s
+            data:
+              value: "{{ hs[1] }}"
+      - name: 虚拟-茶室-筒灯
+        unique_id: v_light_b1_tea_room_downlights
+        icon: mdi:ceiling-light-multiple
+        state: "{{ is_state('input_boolean.v_b1_tea_room_downlights_on', 'on') }}"
+        level: "{{ states('input_number.v_b1_tea_room_downlights_bri') | int(180) }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_b1_tea_room_downlights_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_b1_tea_room_downlights_bri
+                data:
+                  value: "{{ brightness }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_b1_tea_room_downlights_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_b1_tea_room_downlights_bri
+            data:
+              value: "{{ brightness }}"
+      - name: 虚拟-茶室-灯带
+        unique_id: v_light_b1_tea_room_strip
+        icon: mdi:led-strip-variant
+        state: "{{ is_state('input_boolean.v_b1_tea_room_strip_on', 'on') }}"
+        level: "{{ states('input_number.v_b1_tea_room_strip_bri') | int(180) }}"
+        hs: "{{ [states('input_number.v_b1_tea_room_strip_h') | float(30), states('input_number.v_b1_tea_room_strip_s') | float(80)] }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_b1_tea_room_strip_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_b1_tea_room_strip_bri
+                data:
+                  value: "{{ brightness }}"
+          - if:
+              - condition: template
+                value_template: "{{ hs is defined and hs|length == 2 }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_b1_tea_room_strip_h
+                data:
+                  value: "{{ hs[0] }}"
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_b1_tea_room_strip_s
+                data:
+                  value: "{{ hs[1] }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_b1_tea_room_strip_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_b1_tea_room_strip_bri
+            data:
+              value: "{{ brightness }}"
+        set_hs:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_b1_tea_room_strip_h
+            data:
+              value: "{{ hs[0] }}"
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_b1_tea_room_strip_s
+            data:
+              value: "{{ hs[1] }}"
+      - name: 虚拟-影音室-筒灯
+        unique_id: v_light_b1_theater_downlights
+        icon: mdi:ceiling-light-multiple
+        state: "{{ is_state('input_boolean.v_b1_theater_downlights_on', 'on') }}"
+        level: "{{ states('input_number.v_b1_theater_downlights_bri') | int(180) }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_b1_theater_downlights_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_b1_theater_downlights_bri
+                data:
+                  value: "{{ brightness }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_b1_theater_downlights_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_b1_theater_downlights_bri
+            data:
+              value: "{{ brightness }}"
+      - name: 虚拟-影音室-灯带
+        unique_id: v_light_b1_theater_strip
+        icon: mdi:led-strip-variant
+        state: "{{ is_state('input_boolean.v_b1_theater_strip_on', 'on') }}"
+        level: "{{ states('input_number.v_b1_theater_strip_bri') | int(180) }}"
+        hs: "{{ [states('input_number.v_b1_theater_strip_h') | float(30), states('input_number.v_b1_theater_strip_s') | float(80)] }}"
+        turn_on:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: input_boolean.v_b1_theater_strip_on
+          - if:
+              - condition: template
+                value_template: "{{ brightness is defined }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_b1_theater_strip_bri
+                data:
+                  value: "{{ brightness }}"
+          - if:
+              - condition: template
+                value_template: "{{ hs is defined and hs|length == 2 }}"
+            then:
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_b1_theater_strip_h
+                data:
+                  value: "{{ hs[0] }}"
+              - service: input_number.set_value
+                target:
+                  entity_id: input_number.v_b1_theater_strip_s
+                data:
+                  value: "{{ hs[1] }}"
+        turn_off:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: input_boolean.v_b1_theater_strip_on
+        set_level:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_b1_theater_strip_bri
+            data:
+              value: "{{ brightness }}"
+        set_hs:
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_b1_theater_strip_h
+            data:
+              value: "{{ hs[0] }}"
+          - service: input_number.set_value
+            target:
+              entity_id: input_number.v_b1_theater_strip_s
+            data:
+              value: "{{ hs[1] }}"

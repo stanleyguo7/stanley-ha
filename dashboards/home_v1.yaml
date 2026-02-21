@@ -1,0 +1,224 @@
+title: Home V2
+views:
+  - title: 首页
+    path: home
+    icon: mdi:home-analytics
+    type: masonry
+    cards:
+      - type: custom:mushroom-title-card
+        card_mod:
+          style: |
+            mushroom-title-card$: |
+              .title {
+                font-size: 14px !important;
+                font-weight: 600 !important;
+              }
+        title: 首页
+
+      - type: custom:mushroom-chips-card
+        chips:
+          - type: entity
+            entity: input_boolean.debug_mode
+            name: 调试模式
+            icon_color: purple
+            tap_action: { action: toggle }
+          - type: entity
+            entity: input_select.home_mode
+            name: 家庭模式
+            icon: mdi:home-switch
+          - type: entity
+            entity: sensor.unavailable_entities_count
+            name: 离线设备
+            icon: mdi:lan-disconnect
+          - type: entity
+            entity: sensor.low_battery_entities_count
+            name: 低电量
+            icon: mdi:battery-alert
+
+      - type: custom:mushroom-title-card
+        card_mod:
+          style: |
+            mushroom-title-card$: |
+              .title {
+                font-size: 14px !important;
+                font-weight: 600 !important;
+              }
+        title: 模式
+      - type: grid
+        columns: 2
+        square: false
+        cards:
+          - type: custom:mushroom-entity-card
+            entity: script.mode_home
+            name: 回家模式
+            icon: mdi:home-import-outline
+            tap_action:
+              action: call-service
+              service: script.turn_on
+              target:
+                entity_id: script.mode_home
+          - type: custom:mushroom-entity-card
+            entity: script.mode_away
+            name: 离家模式
+            icon: mdi:home-export-outline
+            tap_action:
+              action: call-service
+              service: script.turn_on
+              target:
+                entity_id: script.mode_away
+          - type: custom:mushroom-entity-card
+            entity: script.mode_sleep
+            name: 睡眠模式
+            icon: mdi:sleep
+            tap_action:
+              action: call-service
+              service: script.turn_on
+              target:
+                entity_id: script.mode_sleep
+          - type: custom:mushroom-entity-card
+            entity: script.mode_movie
+            name: 观影模式
+            icon: mdi:movie-open
+            tap_action:
+              action: call-service
+              service: script.turn_on
+              target:
+                entity_id: script.mode_movie
+          - type: custom:mushroom-entity-card
+            entity: script.all_lights_off
+            name: 全屋关灯
+            icon: mdi:lightbulb-multiple-off
+            tap_action:
+              action: call-service
+              service: script.turn_on
+              target:
+                entity_id: script.all_lights_off
+
+      - type: custom:mushroom-title-card
+        card_mod:
+          style: |
+            mushroom-title-card$: |
+              .title {
+                font-size: 14px !important;
+                font-weight: 600 !important;
+              }
+        title: 客厅
+      - type: custom:mushroom-chips-card
+        chips:
+          - type: action
+            icon: mdi:air-conditioner
+            content: 空调
+            tap_action: { action: call-service, service: script.bridge_living_room_ac_toggle }
+          - type: action
+            icon: mdi:curtains
+            content: 窗帘
+            tap_action: { action: call-service, service: script.bridge_living_room_curtain_toggle }
+      - type: grid
+        columns: 2
+        square: false
+        cards:
+          - type: custom:mushroom-light-card
+            entity: light.v_f1_living_room_downlights
+            name: 客厅筒灯
+          - type: custom:mushroom-light-card
+            entity: light.v_f1_living_room_strip
+            name: 客厅灯带
+          - type: custom:mushroom-entity-card
+            entity: input_select.v_f1_living_room_ac_mode
+            name: 客厅空调模式
+          - type: custom:mushroom-cover-card
+            entity: cover.v_f1_living_room_curtain
+            name: 客厅窗帘
+
+      - type: custom:mushroom-title-card
+        card_mod:
+          style: |
+            mushroom-title-card$: |
+              .title {
+                font-size: 14px !important;
+                font-weight: 600 !important;
+              }
+        title: 主卧
+      - type: custom:mushroom-chips-card
+        chips:
+          - type: action
+            icon: mdi:air-conditioner
+            content: 空调
+            tap_action: { action: call-service, service: script.bridge_master_ac_toggle }
+          - type: action
+            icon: mdi:curtains
+            content: 窗帘
+            tap_action: { action: call-service, service: script.bridge_master_curtain_toggle }
+      - type: grid
+        columns: 2
+        square: false
+        cards:
+          - type: custom:mushroom-light-card
+            entity: light.v_f2_master_bedroom_downlights
+            name: 主卧筒灯
+          - type: custom:mushroom-light-card
+            entity: light.v_f2_master_bedroom_strip
+            name: 主卧灯带
+          - type: custom:mushroom-entity-card
+            entity: input_select.v_f2_master_bedroom_ac_mode
+            name: 主卧空调模式
+          - type: custom:mushroom-cover-card
+            entity: cover.v_f2_master_bedroom_curtain
+            name: 主卧窗帘
+
+      - type: custom:mushroom-title-card
+        card_mod:
+          style: |
+            mushroom-title-card$: |
+              .title {
+                font-size: 14px !important;
+                font-weight: 600 !important;
+              }
+        title: 车库
+      - type: custom:mushroom-chips-card
+        chips:
+          - type: action
+            icon: mdi:air-conditioner
+            content: 空调
+            tap_action: { action: call-service, service: script.bridge_garage_ac_toggle }
+      - type: grid
+        columns: 2
+        square: false
+        cards:
+          - type: custom:mushroom-light-card
+            entity: light.v_f1_garage_downlights
+            name: 车库筒灯
+          - type: custom:mushroom-light-card
+            entity: light.v_f1_garage_strip
+            name: 车库灯带
+          - type: custom:mushroom-entity-card
+            entity: input_select.v_f1_garage_ac_mode
+            name: 车库空调模式
+
+      - type: custom:mushroom-title-card
+        card_mod:
+          style: |
+            mushroom-title-card$: |
+              .title {
+                font-size: 14px !important;
+                font-weight: 600 !important;
+              }
+        title: 导航
+      - type: custom:mushroom-chips-card
+        chips:
+          - type: action
+            icon: mdi:basement
+            content: 地下室
+            tap_action: { action: navigate, navigation_path: /dashboard-floorplan/panel-b1 }
+          - type: action
+            icon: mdi:home-floor-1
+            content: 一楼
+            tap_action: { action: navigate, navigation_path: /dashboard-floorplan/panel-1f }
+          - type: action
+            icon: mdi:home-floor-2
+            content: 二楼
+            tap_action: { action: navigate, navigation_path: /dashboard-floorplan/panel-2f }
+          - type: action
+            icon: mdi:floor-plan
+            content: 平面图
+            tap_action: { action: navigate, navigation_path: /dashboard-floorplan/floorplan-1f }

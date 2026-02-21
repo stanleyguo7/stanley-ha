@@ -14,6 +14,29 @@ homeassistant:
 # Note: Using default storage mode (no need to set mode: yaml)
 # Resources can be added through UI: Configuration > Dashboards > Resources
 # Dashboards can be imported through UI: Configuration > Dashboards > Add Dashboard
+lovelace:
+  resources:
+    - url: https://cdn.jsdelivr.net/gh/piitaya/lovelace-mushroom@4/mushroom.js
+      type: module
+    - url: https://cdn.jsdelivr.net/gh/thomasloven/lovelace-card-mod@3/card-mod.js
+      type: module
+    - url: https://cdn.jsdelivr.net/gh/thomasloven/lovelace-layout-card@2/layout-card.js
+      type: module
+    - url: https://cdn.jsdelivr.net/gh/custom-cards/button-card@6/button-card.js
+      type: module
+  dashboards:
+    dashboard-floorplan:
+      mode: yaml
+      title: FloorPlan
+      icon: mdi:floor-plan
+      show_in_sidebar: true
+      filename: dashboards/floorplan.yaml
+    dashboard-home:
+      mode: yaml
+      title: 首页
+      icon: mdi:home-analytics
+      show_in_sidebar: true
+      filename: dashboards/home_v1.yaml
 
 automation: !include automations.yaml
 script: !include scripts.yaml

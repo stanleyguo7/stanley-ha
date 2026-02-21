@@ -1,0 +1,297 @@
+# 全局核心配置（首页/模式/告警）
+
+input_select:
+  home_mode:
+    name: 家庭模式
+    options:
+      - Home
+      - Away
+      - Sleep
+      - Movie
+    initial: Home
+    icon: mdi:home-switch
+
+input_boolean:
+  home_alert_mute:
+    name: 告警静音
+    icon: mdi:bell-off
+  debug_mode:
+    name: 调试模式（虚拟设备）
+    icon: mdi:test-tube
+
+input_text:
+  map_f1_living_room_downlights:
+    name: 映射-客厅筒灯(真实entity_id)
+  map_f1_living_room_strip:
+    name: 映射-客厅灯带(真实entity_id)
+  map_f1_living_room_curtain:
+    name: 映射-客厅窗帘(真实entity_id)
+  map_f1_living_room_ac_power:
+    name: 映射-客厅空调电源(真实entity_id)
+
+  map_f2_master_bedroom_downlights:
+    name: 映射-主卧筒灯(真实entity_id)
+  map_f2_master_bedroom_strip:
+    name: 映射-主卧灯带(真实entity_id)
+  map_f2_master_bedroom_curtain:
+    name: 映射-主卧窗帘(真实entity_id)
+  map_f2_master_bedroom_ac_power:
+    name: 映射-主卧空调电源(真实entity_id)
+
+  map_f1_garage_downlights:
+    name: 映射-车库筒灯(真实entity_id)
+  map_f1_garage_strip:
+    name: 映射-车库灯带(真实entity_id)
+  map_f1_garage_ac_power:
+    name: 映射-车库空调电源(真实entity_id)
+
+template:
+  - binary_sensor:
+      - name: "alert_any_issue"
+        unique_id: alert_any_issue
+        icon: mdi:alert-circle
+        state: >-
+          {{
+            states('sensor.unavailable_entities_count')|int(0) > 0
+            or states('sensor.low_battery_entities_count')|int(0) > 0
+          }}
+
+  - sensor:
+      - name: "unavailable_entities_count"
+        unique_id: unavailable_entities_count
+        icon: mdi:lan-disconnect
+        unit_of_measurement: "个"
+        state: >-
+          {{
+            states
+            | selectattr('state', 'in', ['unavailable', 'unknown'])
+            | rejectattr('entity_id', 'search', '^sensor\\.date')
+            | rejectattr('entity_id', 'search', '^sensor\\.time')
+            | list
+            | count
+          }}
+
+      - name: "low_battery_entities_count"
+        unique_id: low_battery_entities_count
+        icon: mdi:battery-alert
+        unit_of_measurement: "个"
+        state: >-
+          {% set ns = namespace(count=0) %}
+          {% for s in states.sensor
+             if s.entity_id.endswith('_battery')
+             or s.entity_id.endswith('_battery_level')
+             or 'battery' in s.entity_id %}
+            {% set v = s.state | int(-1) %}
+            {% if v >= 0 and v < 20 %}
+              {% set ns.count = ns.count + 1 %}
+            {% endif %}
+          {% endfor %}
+          {{ ns.count }}
+
+script:
+  mode_home:
+    alias: 模式 - 回家
+    sequence:
+      - service: input_select.select_option
+        target:
+          entity_id: input_select.home_mode
+        data:
+          option: Home
+
+  mode_away:
+    alias: 模式 - 离家
+    sequence:
+      - service: input_select.select_option
+        target:
+          entity_id: input_select.home_mode
+        data:
+          option: Away
+
+  mode_sleep:
+    alias: 模式 - 睡眠
+    sequence:
+      - service: input_select.select_option
+        target:
+          entity_id: input_select.home_mode
+        data:
+          option: Sleep
+
+  mode_movie:
+    alias: 模式 - 观影
+    sequence:
+      - service: input_select.select_option
+        target:
+          entity_id: input_select.home_mode
+        data:
+          option: Movie
+
+  all_lights_off:
+    alias: 一键关灯
+    sequence:
+      - service: light.turn_off
+        target:
+          entity_id: all
+
+  bridge_living_room_downlights_toggle:
+    alias: 桥接-客厅筒灯切换
+    sequence:
+      - service: light.toggle
+        data:
+          entity_id: >-
+            {% if is_state('input_boolean.debug_mode','on') or states('input_text.map_f1_living_room_downlights')|trim == '' %}
+              light.v_f1_living_room_downlights
+            {% else %}
+              {{ states('input_text.map_f1_living_room_downlights')|trim }}
+            {% endif %}
+
+  bridge_living_room_strip_toggle:
+    alias: 桥接-客厅灯带切换
+    sequence:
+      - service: light.toggle
+        data:
+          entity_id: >-
+            {% if is_state('input_boolean.debug_mode','on') or states('input_text.map_f1_living_room_strip')|trim == '' %}
+              light.v_f1_living_room_strip
+            {% else %}
+              {{ states('input_text.map_f1_living_room_strip')|trim }}
+            {% endif %}
+
+  bridge_living_room_curtain_toggle:
+    alias: 桥接-客厅窗帘开合
+    sequence:
+      - choose:
+          - conditions:
+              - condition: template
+                value_template: >-
+                  {% set e = 'cover.v_f1_living_room_curtain' if is_state('input_boolean.debug_mode','on') or states('input_text.map_f1_living_room_curtain')|trim == '' else states('input_text.map_f1_living_room_curtain')|trim %}
+                  {{ state_attr(e,'current_position')|int(0) < 50 }}
+            sequence:
+              - service: cover.open_cover
+                data:
+                  entity_id: >-
+                    {% if is_state('input_boolean.debug_mode','on') or states('input_text.map_f1_living_room_curtain')|trim == '' %}
+                      cover.v_f1_living_room_curtain
+                    {% else %}
+                      {{ states('input_text.map_f1_living_room_curtain')|trim }}
+                    {% endif %}
+        default:
+          - service: cover.close_cover
+            data:
+              entity_id: >-
+                {% if is_state('input_boolean.debug_mode','on') or states('input_text.map_f1_living_room_curtain')|trim == '' %}
+                  cover.v_f1_living_room_curtain
+                {% else %}
+                  {{ states('input_text.map_f1_living_room_curtain')|trim }}
+                {% endif %}
+
+  bridge_living_room_ac_toggle:
+    alias: 桥接-客厅空调电源切换
+    sequence:
+      - service: homeassistant.toggle
+        data:
+          entity_id: >-
+            {% if is_state('input_boolean.debug_mode','on') or states('input_text.map_f1_living_room_ac_power')|trim == '' %}
+              input_boolean.v_f1_living_room_ac_on
+            {% else %}
+              {{ states('input_text.map_f1_living_room_ac_power')|trim }}
+            {% endif %}
+
+  bridge_master_downlights_toggle:
+    alias: 桥接-主卧筒灯切换
+    sequence:
+      - service: light.toggle
+        data:
+          entity_id: >-
+            {% if is_state('input_boolean.debug_mode','on') or states('input_text.map_f2_master_bedroom_downlights')|trim == '' %}
+              light.v_f2_master_bedroom_downlights
+            {% else %}
+              {{ states('input_text.map_f2_master_bedroom_downlights')|trim }}
+            {% endif %}
+
+  bridge_master_strip_toggle:
+    alias: 桥接-主卧灯带切换
+    sequence:
+      - service: light.toggle
+        data:
+          entity_id: >-
+            {% if is_state('input_boolean.debug_mode','on') or states('input_text.map_f2_master_bedroom_strip')|trim == '' %}
+              light.v_f2_master_bedroom_strip
+            {% else %}
+              {{ states('input_text.map_f2_master_bedroom_strip')|trim }}
+            {% endif %}
+
+  bridge_master_curtain_toggle:
+    alias: 桥接-主卧窗帘开合
+    sequence:
+      - choose:
+          - conditions:
+              - condition: template
+                value_template: >-
+                  {% set e = 'cover.v_f2_master_bedroom_curtain' if is_state('input_boolean.debug_mode','on') or states('input_text.map_f2_master_bedroom_curtain')|trim == '' else states('input_text.map_f2_master_bedroom_curtain')|trim %}
+                  {{ state_attr(e,'current_position')|int(0) < 50 }}
+            sequence:
+              - service: cover.open_cover
+                data:
+                  entity_id: >-
+                    {% if is_state('input_boolean.debug_mode','on') or states('input_text.map_f2_master_bedroom_curtain')|trim == '' %}
+                      cover.v_f2_master_bedroom_curtain
+                    {% else %}
+                      {{ states('input_text.map_f2_master_bedroom_curtain')|trim }}
+                    {% endif %}
+        default:
+          - service: cover.close_cover
+            data:
+              entity_id: >-
+                {% if is_state('input_boolean.debug_mode','on') or states('input_text.map_f2_master_bedroom_curtain')|trim == '' %}
+                  cover.v_f2_master_bedroom_curtain
+                {% else %}
+                  {{ states('input_text.map_f2_master_bedroom_curtain')|trim }}
+                {% endif %}
+
+  bridge_master_ac_toggle:
+    alias: 桥接-主卧空调电源切换
+    sequence:
+      - service: homeassistant.toggle
+        data:
+          entity_id: >-
+            {% if is_state('input_boolean.debug_mode','on') or states('input_text.map_f2_master_bedroom_ac_power')|trim == '' %}
+              input_boolean.v_f2_master_bedroom_ac_on
+            {% else %}
+              {{ states('input_text.map_f2_master_bedroom_ac_power')|trim }}
+            {% endif %}
+
+  bridge_garage_downlights_toggle:
+    alias: 桥接-车库筒灯切换
+    sequence:
+      - service: light.toggle
+        data:
+          entity_id: >-
+            {% if is_state('input_boolean.debug_mode','on') or states('input_text.map_f1_garage_downlights')|trim == '' %}
+              light.v_f1_garage_downlights
+            {% else %}
+              {{ states('input_text.map_f1_garage_downlights')|trim }}
+            {% endif %}
+
+  bridge_garage_strip_toggle:
+    alias: 桥接-车库灯带切换
+    sequence:
+      - service: light.toggle
+        data:
+          entity_id: >-
+            {% if is_state('input_boolean.debug_mode','on') or states('input_text.map_f1_garage_strip')|trim == '' %}
+              light.v_f1_garage_strip
+            {% else %}
+              {{ states('input_text.map_f1_garage_strip')|trim }}
+            {% endif %}
+
+  bridge_garage_ac_toggle:
+    alias: 桥接-车库空调电源切换
+    sequence:
+      - service: homeassistant.toggle
+        data:
+          entity_id: >-
+            {% if is_state('input_boolean.debug_mode','on') or states('input_text.map_f1_garage_ac_power')|trim == '' %}
+              input_boolean.v_f1_garage_ac_on
+            {% else %}
+              {{ states('input_text.map_f1_garage_ac_power')|trim }}
+            {% endif %}
